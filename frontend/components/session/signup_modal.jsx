@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 
-import LoginFormContainer from './login_form_container';
+import SignupFormContainer from './signup_form_container';
 
-class LoginModal extends React.Component {
+class SignupModal extends React.Component {
   constructor () {
     super();
     this.state = {
@@ -26,20 +26,19 @@ class LoginModal extends React.Component {
   render () {
     return (
       <div>
-        <button onClick={this.handleOpenModal}>Login</button>
+        <button onClick={this.handleOpenModal}>Signup</button>
         <Modal
            isOpen={this.state.showModal}
            contentLabel="Minimal Modal Example"
            onRequestClose={this.handleCloseModal}
         >
 
-        <LoginFormContainer closeModal={this.handleCloseModal} />
-
-        <button onClick={this.handleCloseModal}>close</button>
+        <SignupFormContainer />
+          <button onClick={this.handleCloseModal}>submit</button>
         </Modal>
       </div>
     );
   }
 }
 
-export default LoginModal;
+export default SignupModal;

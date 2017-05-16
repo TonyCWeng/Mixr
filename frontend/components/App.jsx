@@ -1,10 +1,12 @@
 import React from 'react';
 import LoginModal from './session/login_modal';
+import SignupModal from './session/signup_modal';
 
 const App = () => (
   <div>
     <LoginModal />
-    <h1>Mixr!</h1>
+    <SignupModal />
+    <h1></h1>
   </div>
 );
 
