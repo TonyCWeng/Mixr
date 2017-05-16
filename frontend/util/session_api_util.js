@@ -1,21 +1,21 @@
 export const signup = user => {
-  $.ajax({
+  return $.ajax({
     type: 'POST',
     url: 'api/users',
-    data: user
+    data: {user}
   });
 };
 
 export const login = user => {
-  $.ajax({
+  return $.ajax({
     type: 'POST',
     url: 'api/session',
-    data: user
+    data: {user}
   });
 };
 
 export const logout = () => {
-  $.ajax({
+  return $.ajax({
     type: 'DELETE',
     url: 'api/session'
   });
