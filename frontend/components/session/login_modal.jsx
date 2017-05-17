@@ -30,7 +30,7 @@ class LoginModal extends React.Component {
       return (
         <div>
           <button
-            className="button"
+            className="session-button"
             onClick={ this.props.logout }
             >
             Logout
@@ -40,7 +40,12 @@ class LoginModal extends React.Component {
     } else {
       return (
         <div>
-          <button className="button" onClick={this.handleOpenModal}>Login</button>
+          <button
+            className="session-button"
+            onClick={this.handleOpenModal}
+          >
+            Login
+          </button>
 
           <Modal key='login'
             closeTimeoutMS={300}

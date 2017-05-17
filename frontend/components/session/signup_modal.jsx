@@ -28,7 +28,7 @@ class SignupModal extends React.Component {
   render () {
     return (
       <div>
-        <button className="button" onClick={this.handleOpenModal}>Signup</button>
+        <button className="session-button" onClick={this.handleOpenModal}>Signup</button>
         <Modal
           closeTimeoutMS={300}
           isOpen={this.state.showModal}
@@ -38,7 +38,6 @@ class SignupModal extends React.Component {
         >
 
         <SignupFormContainer closeModal={this.handleCloseModal}/>
-          <button className="button" onClick={this.handleCloseModal}>close</button>
         </Modal>
       </div>
     );

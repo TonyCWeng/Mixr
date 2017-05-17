@@ -9,7 +9,7 @@ class SignupForm extends React.Component {
       password: ''
     };
 
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   update(field) {
@@ -18,7 +18,7 @@ class SignupForm extends React.Component {
     });
   }
 
-  handleSubmit(e) {
+  handleClick(e) {
     e.preventDefault();
     const user = this.state;
     this.props.clearErrors();
@@ -37,43 +37,51 @@ class SignupForm extends React.Component {
 
   render () {
     return (
+      <div>
 
-        <form onSubmit={this.handleSubmit} className="session-form">
+        <div className="session-form">
           {this.renderErrors()}
           <div className="form-item">
             <label >Username: </label>
-              <input id="username"
-                type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-                className="session-input"
-              />
+            <input id="username"
+              type="text"
+              value={this.state.username}
+              onChange={this.update('username')}
+              className="session-input"
+            />
 
           </div>
 
           <div className="form-item">
             <label >Email: </label>
-              <input
-                type="text"
-                value={this.state.email}
-                onChange={this.update('email')}
-                className="session-input"
-              />
-            </div>
+            <input
+              type="text"
+              value={this.state.email}
+              onChange={this.update('email')}
+              className="session-input"
+            />
+          </div>
 
-            <div className="form-item">
-            <label >Password: </label>
-              <input
-                type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="session-input"
-              />
-            </div>
+          <div className="form-item">
+            <label>Password: </label>
+            <input
+              type="password"
+              value={this.state.password}
+              onChange={this.update('password')}
+              className="session-input"
+            />
+          </div>
+        </div>
 
-            <input className="button" type="submit" value="Submit" />
+        <button className="auth-button" onClick={this.props.closeModal}>
+          Close
+        </button>
 
-        </form>
+        <button className="auth-button" onClick={this.handleClick}>
+          Submit
+        </button>
+
+      </div>
     );
   }
 }

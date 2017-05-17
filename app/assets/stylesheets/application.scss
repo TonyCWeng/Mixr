@@ -22,9 +22,15 @@
    background-color: #36465d;
  }
 
- .button {
+.errors {
+  color: red;
+  list-style-type: none;
+}
+
+ .session-button {
    background-color: #fff;
-   border-radius: 5px;
+   border: 2px solid #fff;
+   border-radius: 1px;
    cursor: pointer;
    width: 75px;
    height: 32px;
@@ -61,4 +67,12 @@
   &--before-close {
     opacity: 0;
   }
+}
+
+.auth-button {
+  
+}
+
+.logo-name {
+
 }

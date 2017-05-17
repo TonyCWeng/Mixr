@@ -9,7 +9,7 @@ class LoginForm extends React.Component {
       password: ''
     };
 
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   update(field) {
@@ -18,7 +18,7 @@ class LoginForm extends React.Component {
     });
   }
 
-  handleSubmit(e) {
+  handleClick(e) {
     e.preventDefault();
     const user = this.state;
     this.props.clearErrors();
@@ -29,7 +29,7 @@ class LoginForm extends React.Component {
     return(
       <ul>
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>{error}</li>
+          <li className="errors" key={`error-${i}`}>{error}</li>
         ))}
       </ul>
     );
@@ -38,39 +38,39 @@ class LoginForm extends React.Component {
   render () {
     return (
 
-      <div className="session-form">
-        <form onSubmit={this.handleSubmit} className="session-form">
+      <div className="">
+        <div className="session-form">
           {this.renderErrors()}
-
           <div className="form-item">
             <label>Username:</label>
-              <input
-                type="text"
-                value={this.state.username}
-                onChange={this.update('username')}
-                className="session-input"
-              />
+            <input
+              type="text"
+              value={this.state.username}
+              onChange={this.update('username')}
+              className="session-input"
+            />
           </div>
 
           <div className="form-item">
             <label>Password: </label>
-              <input
-                type="password"
-                value={this.state.password}
-                onChange={this.update('password')}
-                className="session-input"
-              />
+            <input
+              type="password"
+              value={this.state.password}
+              onChange={this.update('password')}
+              className="session-input"
+            />
           </div>
 
-          <button className="button" onClick={this.handleCloseModal}>
-            Submit
-          </button>
+        </div>
 
-        </form>
-
-        <button className="button" onClick={this.props.closeModal}>
+        <button className="auth-button" onClick={this.props.closeModal}>
           Close
         </button>
+
+        <button className="auth-button" onClick={this.handleClick}>
+          Submit
+        </button>
+
       </div>
     );
   }
