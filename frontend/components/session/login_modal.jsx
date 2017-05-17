@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 
+import { style } from './modal_style';
+
 import LoginFormContainer from './login_form_container';
 
 class LoginModal extends React.Component {
@@ -26,16 +28,17 @@ class LoginModal extends React.Component {
   render () {
     return (
       <div>
-        <button onClick={this.handleOpenModal}>Login</button>
+        <button className="button" onClick={this.handleOpenModal}>Login</button>
         <Modal
            isOpen={this.state.showModal}
            contentLabel="Minimal Modal Example"
            onRequestClose={this.handleCloseModal}
+           style={style}
         >
 
         <LoginFormContainer closeModal={this.handleCloseModal} />
 
-        <button onClick={this.handleCloseModal}>close</button>
+        <button className="button" onClick={this.handleCloseModal}>close</button>
         </Modal>
       </div>
     );

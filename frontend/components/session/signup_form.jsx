@@ -58,7 +58,6 @@ class SignupForm extends React.Component {
                 onChange={this.update('email')}
                 className="session-input"
               />
-
             </div>
 
             <div className="form-item">
@@ -69,10 +68,9 @@ class SignupForm extends React.Component {
                 onChange={this.update('password')}
                 className="session-input"
               />
-
             </div>
 
-            <input type="submit" value="Submit" />
+            <input className="button" type="submit" value="Submit" />
 
         </form>
     );

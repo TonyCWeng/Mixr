@@ -28,7 +28,7 @@ class SignupModal extends React.Component {
   render () {
     return (
       <div>
-        <button onClick={this.handleOpenModal}>Signup</button>
+        <button className="button" onClick={this.handleOpenModal}>Signup</button>
         <Modal
            isOpen={this.state.showModal}
            contentLabel="Minimal Modal Example"
@@ -37,7 +37,7 @@ class SignupModal extends React.Component {
         >
 
         <SignupFormContainer />
-          <button onClick={this.handleCloseModal}>close</button>
+          <button className="button" onClick={this.handleCloseModal}>close</button>
         </Modal>
       </div>
     );
