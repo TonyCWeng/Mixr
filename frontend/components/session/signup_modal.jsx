@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 
+import { style } from './modal_style';
+
 import SignupFormContainer from './signup_form_container';
 
 class SignupModal extends React.Component {
@@ -31,10 +33,11 @@ class SignupModal extends React.Component {
            isOpen={this.state.showModal}
            contentLabel="Minimal Modal Example"
            onRequestClose={this.handleCloseModal}
+           style={style}
         >
 
         <SignupFormContainer />
-          <button onClick={this.handleCloseModal}>submit</button>
+          <button onClick={this.handleCloseModal}>close</button>
         </Modal>
       </div>
     );
