@@ -26,22 +26,36 @@ class LoginModal extends React.Component {
   }
 
   render () {
-    return (
-      <div>
-        <button className="button" onClick={this.handleOpenModal}>Login</button>
-        <Modal
-           isOpen={this.state.showModal}
-           contentLabel="Minimal Modal Example"
-           onRequestClose={this.handleCloseModal}
-           style={style}
-        >
+    if (this.props.currentUser) {
+      return (
+        <div>
+          <button
+            className="button"
+            onClick={ this.props.logout }
+            >
+            Logout
+          </button>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <button className="button" onClick={this.handleOpenModal}>Login</button>
 
-        <LoginFormContainer closeModal={this.handleCloseModal} />
+          <Modal key='login'
+            closeTimeoutMS={300}
+            isOpen={this.state.showModal}
+            contentLabel="Minimal Modal Example"
+            onRequestClose={this.handleCloseModal}
+            style={style}
+          >
 
-        <button className="button" onClick={this.handleCloseModal}>close</button>
-        </Modal>
-      </div>
-    );
+          <LoginFormContainer closeModal={this.handleCloseModal} />
+          </Modal>
+
+        </div>
+      );
+    }
   }
 }
 

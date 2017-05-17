@@ -21,6 +21,7 @@ class LoginForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
+    this.props.clearErrors();
     this.props.login(user).then( () => this.props.closeModal()) ;
   }
 
@@ -42,29 +43,34 @@ class LoginForm extends React.Component {
           {this.renderErrors()}
 
           <div className="form-item">
-            <label for="email">Username:
-              <input id="email"
+            <label>Username:</label>
+              <input
                 type="text"
                 value={this.state.username}
                 onChange={this.update('username')}
                 className="session-input"
               />
-            </label>
           </div>
 
           <div className="form-item">
-            <label for="password">Password:
-              <input id="password"
+            <label>Password: </label>
+              <input
                 type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
                 className="session-input"
               />
-            </label>
           </div>
-            <input className="button" type="submit" value="Submit" />
+
+          <button className="button" onClick={this.handleCloseModal}>
+            Submit
+          </button>
 
         </form>
+
+        <button className="button" onClick={this.props.closeModal}>
+          Close
+        </button>
       </div>
     );
   }

@@ -1,12 +1,11 @@
 import React from 'react';
-import LoginModal from './session/login_modal';
-import SignupModal from './session/signup_modal';
+
+import Header from './header/header.jsx';
+
 
 const App = () => (
   <div>
-    <LoginModal />
-    <SignupModal />
-    <h1></h1>
+    <Header />
   </div>
 );
 

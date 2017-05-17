@@ -22,7 +22,7 @@ class SignupModal extends React.Component {
   }
 
   handleCloseModal () {
-    this.setState({ showModal: false });
+      return this.setState({ showModal: false });
   }
 
   render () {
@@ -30,13 +30,14 @@ class SignupModal extends React.Component {
       <div>
         <button className="button" onClick={this.handleOpenModal}>Signup</button>
         <Modal
-           isOpen={this.state.showModal}
-           contentLabel="Minimal Modal Example"
-           onRequestClose={this.handleCloseModal}
-           style={style}
+          closeTimeoutMS={300}
+          isOpen={this.state.showModal}
+          contentLabel="Minimal Modal Example"
+          onRequestClose={this.handleCloseModal}
+          style={style}
         >
 
-        <SignupFormContainer />
+        <SignupFormContainer closeModal={this.handleCloseModal}/>
           <button className="button" onClick={this.handleCloseModal}>close</button>
         </Modal>
       </div>

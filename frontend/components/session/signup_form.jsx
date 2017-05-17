@@ -21,7 +21,8 @@ class SignupForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.signup(user);
+    this.props.clearErrors();
+    this.props.signup(user).then( () => this.props.closeModal()) ;
   }
 
   renderErrors() {
@@ -40,7 +41,7 @@ class SignupForm extends React.Component {
         <form onSubmit={this.handleSubmit} className="session-form">
           {this.renderErrors()}
           <div className="form-item">
-            <label for="username">Username: </label>
+            <label >Username: </label>
               <input id="username"
                 type="text"
                 value={this.state.username}
@@ -51,8 +52,8 @@ class SignupForm extends React.Component {
           </div>
 
           <div className="form-item">
-            <label for="email">Email: </label>
-              <input id="email"
+            <label >Email: </label>
+              <input
                 type="text"
                 value={this.state.email}
                 onChange={this.update('email')}
@@ -61,8 +62,8 @@ class SignupForm extends React.Component {
             </div>
 
             <div className="form-item">
-            <label for="password">Password: </label>
-              <input id="password"
+            <label >Password: </label>
+              <input
                 type="password"
                 value={this.state.password}
                 onChange={this.update('password')}

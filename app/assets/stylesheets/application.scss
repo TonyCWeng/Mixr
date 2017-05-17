@@ -18,8 +18,19 @@
    font-family: 'Roboto', sans-serif;
  }
 
+ body {
+   background-color: #36465d;
+ }
+
  .button {
+   background-color: #fff;
+   border-radius: 5px;
    cursor: pointer;
+   width: 75px;
+   height: 32px;
+   padding: 5px 13px;
+   font-weight: 600;
+
  }
 
 .session-form {
@@ -36,4 +47,18 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+}
+
+.ReactModalPortal > * {
+  opacity: 0;
+}
+
+.ReactModal__Overlay {
+  transition: opacity 300ms ease-in-out;
+  &--after-open {
+    opacity: 1;
+  }
+  &--before-close {
+    opacity: 0;
+  }
 }
