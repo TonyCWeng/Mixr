@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import LoginModalContainer from '../session/login_modal_container';
-import SignupModal from '../session/signup_modal';
+import SignupModalContainer from '../session/signup_modal_container';
 import DemoContainer from '../session/demo_container';
 
 const Header = () => (
@@ -12,7 +12,7 @@ const Header = () => (
     </div>
 
     <div className='header-item'>
-      <SignupModal />
+      <SignupModalContainer />
     </div>
 
     <div className='header-item'>

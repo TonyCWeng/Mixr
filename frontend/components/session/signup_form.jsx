@@ -73,13 +73,17 @@ class SignupForm extends React.Component {
           </div>
         </div>
 
-        <button className="auth-button" onClick={this.props.closeModal}>
-          Close
-        </button>
+        <div className="submission">
+        <div className='btn modal-button'>
+          <button className="btn auth-button" onClick={this.props.closeModal}>
+            Close
+          </button>
 
-        <button className="auth-button" onClick={this.handleClick}>
-          Submit
-        </button>
+          <button className="btn auth-button" onClick={this.handleClick}>
+            Submit
+          </button>
+        </div>
+        </div>
 
       </div>
     );

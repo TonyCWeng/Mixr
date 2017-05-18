@@ -14,36 +14,24 @@
  *= require_self
  */
 
- * {
+* {
    font-family: 'Roboto', sans-serif;
- }
+}
 
- body {
+body {
    background-color: #36465d;
- }
+}
 
 .errors {
   color: red;
   list-style-type: none;
 }
 
- .session-button {
-   background-color: #fff;
-   border: 2px solid #fff;
-   border-radius: 1px;
-   cursor: pointer;
-   width: 75px;
-   height: 32px;
-   padding: 5px 13px;
-   font-weight: 600;
-
- }
-
 .session-form {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 90%;
+  height: 250px;
   flex-direction: column;
   padding: 0px 40px;
 }
@@ -69,10 +57,30 @@
   }
 }
 
-.auth-button {
-  
+.btn {
+  cursor: pointer;
 }
 
 .logo-name {
+  font-size: 50px;
+  font-weight: 800;
+  text-align: center;
+  color: white;
+}
 
+.modal-button {
+  display: flex;
+  justify-content: space-between;
+}
+
+.submission {
+  height: 225px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.auth-button {
+  height: 32px;
+  width: 75px;
 }

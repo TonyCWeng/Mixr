@@ -26,21 +26,33 @@ class SignupModal extends React.Component {
   }
 
   render () {
-    return (
-      <div>
-        <button className="session-button" onClick={this.handleOpenModal}>Signup</button>
-        <Modal
-          closeTimeoutMS={300}
-          isOpen={this.state.showModal}
-          contentLabel="Minimal Modal Example"
-          onRequestClose={this.handleCloseModal}
-          style={style}
-        >
+    if (this.props.currentUser) {
+      return (
+        null
+      );
+    } else {
+      return (
+        <div>
+          <button
+            className="btn header-button"
+            onClick={this.handleOpenModal}
+          >
+            Signup
+          </button>
 
-        <SignupFormContainer closeModal={this.handleCloseModal}/>
-        </Modal>
-      </div>
-    );
+          <Modal
+            closeTimeoutMS={300}
+            isOpen={this.state.showModal}
+            contentLabel="Minimal Modal Example"
+            onRequestClose={this.handleCloseModal}
+            style={style}
+          >
+
+          <SignupFormContainer closeModal={this.handleCloseModal}/>
+          </Modal>
+        </div>
+      );
+    }
   }
 }
 

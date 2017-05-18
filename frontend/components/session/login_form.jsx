@@ -63,11 +63,11 @@ class LoginForm extends React.Component {
 
         </div>
 
-        <button className="auth-button" onClick={this.props.closeModal}>
+        <button className="btn submission-button" onClick={this.props.closeModal}>
           Close
         </button>
 
-        <button className="auth-button" onClick={this.handleClick}>
+        <button className="btn submission-button" onClick={this.handleClick}>
           Submit
         </button>
 

@@ -21,7 +21,7 @@ class Demo extends React.Component {
       return (
         <div>
           <button
-            className="session-button"
+            className="btn header-button"
             onClick={ this.demo }
             >
             Guest

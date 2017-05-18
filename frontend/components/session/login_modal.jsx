@@ -30,7 +30,7 @@ class LoginModal extends React.Component {
       return (
         <div>
           <button
-            className="session-button"
+            className="btn header-button"
             onClick={ this.props.logout }
             >
             Logout
@@ -41,7 +41,7 @@ class LoginModal extends React.Component {
       return (
         <div>
           <button
-            className="session-button"
+            className="btn header-button"
             onClick={this.handleOpenModal}
           >
             Login
