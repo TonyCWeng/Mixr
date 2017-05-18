@@ -9,17 +9,17 @@ export const getPosts = posts => (
   $.ajax({
     method: 'GET',
     url: 'api/posts',
-    posts
+    data: posts
   })
 );
 
-export const createPost = post => (
-  $.ajax({
-    method: 'CREATE',
+export const createPost = post => {
+  return $.ajax({
+    method: 'POST',
     url: 'api/posts',
-    post
-  })
-);
+    data: post
+  });
+};
 
 export const deletePost = id => (
   $.ajax({

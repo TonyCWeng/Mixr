@@ -11,7 +11,7 @@ class Api::PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      render :index
+      render :show
     else
       render json: @post.errors.full_messages, status: 401
     end
@@ -21,6 +21,7 @@ class Api::PostsController < ApplicationController
     @post = Post.find(params[:id])
     if current_user.id == @post.author_id
       @post.destroy
+      render :show
     end
   end
 

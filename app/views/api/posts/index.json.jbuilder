@@ -1,1 +1,5 @@
-json.partial! 'api/posts/post', collection: @posts, as: :post
+@posts.each do |post|
+  json.set! post.id do
+    json.partial! 'api/posts/post', post: post
+  end
+end
