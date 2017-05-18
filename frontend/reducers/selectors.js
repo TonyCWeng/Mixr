@@ -1,5 +1,5 @@
 import values from 'lodash/values';
 
-export const selectAllPosts = ({ posts }) => {
+export const selectAllPosts = ( posts ) => {
   return values(posts);
 };
