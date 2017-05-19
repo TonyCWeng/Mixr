@@ -22,7 +22,7 @@ class SignupModal extends React.Component {
   }
 
   handleCloseModal () {
-      return this.setState({ showModal: false });
+    this.setState({ showModal: false });
   }
 
   render () {

@@ -9,7 +9,7 @@ import {
 from '../../actions/post_actions';
 
 const mapStateToProps = ({posts, session}) => ({
-  posts: selectAllPosts,
+  posts: selectAllPosts(posts),
   currentUser: session.currentUser
 });
 

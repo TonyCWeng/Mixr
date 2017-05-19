@@ -16,6 +16,14 @@ class Feed extends React.Component {
   }
 
   render() {
-    
+    return(
+      <ul>
+        {this.props.posts.reverse.map((post, i) => (
+          <li key={`post-${i}`}>{post.title}</li>
+        ))}
+      </ul>
+    );
   }
 }
+
+export default Feed;
