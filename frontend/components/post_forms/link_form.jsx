@@ -3,7 +3,7 @@ import Modal from 'react-modal';
 import { style } from '../session/modal_style';
 import PostFormContainer from './post_form_container';
 
-class TextForm extends React.Component {
+class LinkForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -53,7 +53,7 @@ class TextForm extends React.Component {
           className="btn header-button"
           onClick={this.handleOpenModal}
         >
-          Text
+          Link
         </button>
 
         <Modal
@@ -70,16 +70,16 @@ class TextForm extends React.Component {
             <div className="post-field">
               <input className="post-input"
                 type="text"
-                placeholder="Title"
+                placeholder="Type or paste a URL"
                 value={this.state.title}
                 onChange={this.update('title')}
               />
             </div>
 
             <div className="post-field">
-              <textarea className="post-input"
+              <input className="post-input"
                 type="text"
-                placeholder="Your text here"
+                placeholder="Link description here"
                 value={this.state.body}
                 onChange={this.update('body')}
               />
@@ -107,4 +107,4 @@ class TextForm extends React.Component {
   }
 }
 
-export default PostFormContainer(TextForm);
+export default PostFormContainer(LinkForm);

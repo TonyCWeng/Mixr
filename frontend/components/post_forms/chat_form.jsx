@@ -3,12 +3,12 @@ import Modal from 'react-modal';
 import { style } from '../session/modal_style';
 import PostFormContainer from './post_form_container';
 
-class TextForm extends React.Component {
+class ChatForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       showModal: false,
-      author_id: props.currentUser.id,
+      author_id: '',
       title: '',
       body: '',
       source: '',
@@ -70,14 +70,14 @@ class TextForm extends React.Component {
             <div className="post-field">
               <input className="post-input"
                 type="text"
-                placeholder="Title"
+                placeholder="Chat Title"
                 value={this.state.title}
                 onChange={this.update('title')}
               />
             </div>
 
             <div className="post-field">
-              <textarea className="post-input"
+              <input className="post-input"
                 type="text"
                 placeholder="Your text here"
                 value={this.state.body}
@@ -107,4 +107,4 @@ class TextForm extends React.Component {
   }
 }
 
-export default PostFormContainer(TextForm);
+export default PostFormContainer(ChatForm);

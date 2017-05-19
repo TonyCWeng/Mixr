@@ -3,6 +3,7 @@ import React from 'react';
 class Feed extends React.Component {
   constructor(props) {
     super(props);
+
   }
 
   componentDidMount() {
@@ -19,11 +20,14 @@ class Feed extends React.Component {
     if (this.props.posts.length === 0) {
       return null;
     } else {
-    console.log(this.props.posts);
     return(
       <ul>
         {this.props.posts.reverse().map((post, i) => (
-          <li key={`post-${i}`}>{post.title}</li>
+          <li key={`post-${i}`}>
+            {post.title}
+            <br></br>
+            {post.body}
+          </li>
         ))}
       </ul>
     );

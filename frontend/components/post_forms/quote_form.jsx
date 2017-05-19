@@ -3,7 +3,8 @@ import Modal from 'react-modal';
 import { style } from '../session/modal_style';
 import PostFormContainer from './post_form_container';
 
-class TextForm extends React.Component {
+
+class QuoteForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -37,8 +38,8 @@ class TextForm extends React.Component {
   handleSubmit () {
     const post = {
       author_id: this.state.author_id,
-      title: this.state.title,
-      body: this.state.body,
+      title: `"${this.state.title}"`,
+      body: `—${this.state.body}`,
       source: this.state.source,
       file_type: this.state.title
     };
@@ -53,7 +54,7 @@ class TextForm extends React.Component {
           className="btn header-button"
           onClick={this.handleOpenModal}
         >
-          Text
+          Quote
         </button>
 
         <Modal
@@ -70,16 +71,16 @@ class TextForm extends React.Component {
             <div className="post-field">
               <input className="post-input"
                 type="text"
-                placeholder="Title"
+                placeholder='"Quote"'
                 value={this.state.title}
                 onChange={this.update('title')}
               />
             </div>
 
             <div className="post-field">
-              <textarea className="post-input"
+              <input className="post-input"
                 type="text"
-                placeholder="Your text here"
+                placeholder="Source"
                 value={this.state.body}
                 onChange={this.update('body')}
               />
@@ -107,4 +108,4 @@ class TextForm extends React.Component {
   }
 }
 
-export default PostFormContainer(TextForm);
+export default PostFormContainer(QuoteForm);
