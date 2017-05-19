@@ -16,13 +16,18 @@ class Feed extends React.Component {
   }
 
   render() {
+    if (this.props.posts.length === 0) {
+      return null;
+    } else {
+    console.log(this.props.posts);
     return(
       <ul>
-        {this.props.posts.reverse.map((post, i) => (
+        {this.props.posts.reverse().map((post, i) => (
           <li key={`post-${i}`}>{post.title}</li>
         ))}
       </ul>
     );
+  }
   }
 }
 
