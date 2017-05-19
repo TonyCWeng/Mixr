@@ -24,7 +24,17 @@ class Feed extends React.Component {
       <ul>
         {this.props.posts.reverse().map((post, i) => (
           <li key={`post-${i}`}>
-            {post.title}
+            <img src={post.source} />
+            <img src={post.image_url} />
+            <video width="540" height="360" controls>
+                  <source src={post.source}  />
+                  <source src={post.source}  />
+            </video>
+
+            <audio controls>
+              <source src={post.source} />
+            </audio>
+
             <br></br>
             {post.body}
           </li>

@@ -1,7 +1,8 @@
 class Api::PostsController < ApplicationController
 
   def index
-    @posts = current_user.posts.all
+    # @posts = current_user.posts.all
+    @posts = Post.all
   end
 
   def show
