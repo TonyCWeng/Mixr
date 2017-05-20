@@ -97,9 +97,6 @@ class AudioForm extends React.Component {
               />
             </div>
 
-            <audio controls>
-              <source src={this.state.source} />
-            </audio>
 
             <div className="post-field">
               <textarea className="post-input"
