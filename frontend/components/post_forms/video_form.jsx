@@ -87,7 +87,7 @@ class VideoForm extends React.Component {
 
         <div>
           <div className="post-form">
-
+            <span className="poster">{this.props.currentUser.username}</span>
             <div className="post-field">
               <input className="post-input"
                 type="file"
@@ -95,9 +95,7 @@ class VideoForm extends React.Component {
                 onChange={this.previewFile}
               />
             </div>
-            <video width="540" height="360" controls>
-              <source src={this.state.source} />
-            </video>
+
             <div className="post-field">
               <textarea className="post-input"
                 type="text"
