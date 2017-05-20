@@ -12,7 +12,8 @@ class LinkForm extends React.Component {
       title: '',
       body: '',
       source: '',
-      file_type: ''
+      file_type: '',
+      image: ''
     };
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -31,7 +32,14 @@ class LinkForm extends React.Component {
   }
 
   handleCloseModal () {
-    this.setState({ showModal: false });
+    this.setState({
+      showModal: false,
+      author_id: '',
+      title: '',
+      body: '',
+      source: '',
+      file_type: ''
+    });
   }
 
   handleSubmit () {
@@ -40,8 +48,10 @@ class LinkForm extends React.Component {
       title: this.state.title,
       body: this.state.body,
       source: this.state.source,
-      file_type: this.state.title
+      file_type: '',
+      image: ''
     };
+
     this.props.createPost({post})
               .then(this.handleCloseModal());
   }

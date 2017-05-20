@@ -19,7 +19,6 @@ class VideoForm extends React.Component {
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.updateFile = this.updateFile.bind(this);
     this.previewFile = this.previewFile.bind(this);
   }
 
@@ -30,7 +29,7 @@ class VideoForm extends React.Component {
   }
 
   previewFile() {
-    var preview = document.querySelector('img');
+    var preview = document.querySelector('video');
     var file    = document.querySelector('input[type=file]').files[0];
     var reader  = new FileReader();
 
@@ -49,7 +48,14 @@ class VideoForm extends React.Component {
   }
 
   handleCloseModal () {
-    this.setState({ showModal: false });
+    this.setState({
+      showModal: false,
+      author_id: '',
+      title: '',
+      body: '',
+      source: '',
+      file_type: ''
+    });
   }
 
   handleSubmit () {
@@ -57,7 +63,7 @@ class VideoForm extends React.Component {
     formData.append('post[author_id]', this.state.author_id);
     formData.append('post[source]', this.state.source);
     formData.append('post[body]', this.state.body);
-    this.props.createPost(formData)
+    this.props.createMediaPost(formData)
               .then(this.handleCloseModal());
   }
 
@@ -89,8 +95,9 @@ class VideoForm extends React.Component {
                 onChange={this.previewFile}
               />
             </div>
-            <img src={this.state.source} />
-
+            <video width="540" height="360" controls>
+              <source src={this.state.source} />
+            </video>
             <div className="post-field">
               <textarea className="post-input"
                 type="text"
@@ -104,18 +111,18 @@ class VideoForm extends React.Component {
         </div>
 
         <div className="submission">
-        <div className='btn modal-button'>
-          <button className="btn form-button" onClick={this.handleCloseModal}>
-            Close
-          </button>
+          <div className='btn modal-button'>
+            <button className="btn form-button" onClick={this.handleCloseModal}>
+              Close
+            </button>
 
-          <button className="btn form-button"
-            onClick={this.handleSubmit}
-            disabled={!this.state.source}
-          >
-            Post
-          </button>
-        </div>
+            <button className="btn form-button"
+              onClick={this.handleSubmit}
+              disabled={!this.state.source}
+            >
+              Post
+            </button>
+          </div>
         </div>
 
 

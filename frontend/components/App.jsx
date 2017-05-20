@@ -9,8 +9,10 @@ import PhotoForm from './post_forms/photo_form';
 import VideoForm from './post_forms/video_form';
 import AudioForm from './post_forms/audio_form';
 
+
 const App = () => (
   <div>
+    <TextForm />
     <AudioForm />
     <QuoteForm />
     <VideoForm />

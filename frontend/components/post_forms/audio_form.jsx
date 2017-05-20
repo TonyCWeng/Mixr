@@ -30,7 +30,7 @@ class AudioForm extends React.Component {
   }
 
   previewFile() {
-    var preview = document.querySelector('img');
+    var preview = document.querySelector('audio');
     var file    = document.querySelector('input[type=file]').files[0];
     var reader  = new FileReader();
 
@@ -49,7 +49,14 @@ class AudioForm extends React.Component {
   }
 
   handleCloseModal () {
-    this.setState({ showModal: false });
+    this.setState({
+      showModal: false,
+      author_id: '',
+      title: '',
+      body: '',
+      source: '',
+      file_type: ''
+    });
   }
 
   handleSubmit () {
@@ -57,7 +64,7 @@ class AudioForm extends React.Component {
     formData.append('post[author_id]', this.state.author_id);
     formData.append('post[source]', this.state.source);
     formData.append('post[body]', this.state.body);
-    this.props.createPost(formData)
+    this.props.createMediaPost(formData)
               .then(this.handleCloseModal());
   }
 
@@ -85,11 +92,14 @@ class AudioForm extends React.Component {
             <div className="post-field">
               <input className="post-input"
                 type="file"
-                accept="Audio/*"
+                accept="audio/*"
                 onChange={this.previewFile}
               />
             </div>
-            <img src={this.state.source} />
+
+            <audio controls>
+              <source src={this.state.source} />
+            </audio>
 
             <div className="post-field">
               <textarea className="post-input"
@@ -104,18 +114,18 @@ class AudioForm extends React.Component {
         </div>
 
         <div className="submission">
-        <div className='btn modal-button'>
-          <button className="btn form-button" onClick={this.handleCloseModal}>
-            Close
-          </button>
+          <div className='btn modal-button'>
+            <button className="btn form-button" onClick={this.handleCloseModal}>
+              Close
+            </button>
 
-          <button className="btn form-button"
-            onClick={this.handleSubmit}
-            disabled={!this.state.source}
-          >
-            Post
-          </button>
-        </div>
+            <button className="btn form-button"
+              onClick={this.handleSubmit}
+              disabled={!this.state.source}
+            >
+              Post
+            </button>
+          </div>
         </div>
 
 

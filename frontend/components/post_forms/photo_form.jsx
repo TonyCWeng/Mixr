@@ -49,7 +49,14 @@ class TextForm extends React.Component {
   }
 
   handleCloseModal () {
-    this.setState({ showModal: false });
+    this.setState({
+      showModal: false,
+      author_id: '',
+      title: '',
+      body: '',
+      source: '',
+      file_type: ''
+    });
   }
 
   handleSubmit () {
@@ -57,7 +64,7 @@ class TextForm extends React.Component {
     formData.append('post[author_id]', this.state.author_id);
     formData.append('post[source]', this.state.source);
     formData.append('post[body]', this.state.body);
-    this.props.createPost(formData)
+    this.props.createMediaPost(formData)
               .then(this.handleCloseModal());
   }
 

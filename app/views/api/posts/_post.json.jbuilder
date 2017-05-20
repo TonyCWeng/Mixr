@@ -1,5 +1,3 @@
-# json.extract! post, :id, :author_id, :title, :body, :source, :file_type
-
   json.post_id post.id
   json.author post.author_id
   json.username post.author.username

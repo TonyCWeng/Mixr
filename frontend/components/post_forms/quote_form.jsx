@@ -32,7 +32,14 @@ class QuoteForm extends React.Component {
   }
 
   handleCloseModal () {
-    this.setState({ showModal: false });
+    this.setState({
+      showModal: false,
+      author_id: '',
+      title: '',
+      body: '',
+      source: '',
+      file_type: ''
+    });
   }
 
   handleSubmit () {

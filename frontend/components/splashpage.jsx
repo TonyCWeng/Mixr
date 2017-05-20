@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Splashpage = () => (
+const SplashPage = () => (
   <div>
     <section className='background-image'>
       <div className='logo-name'>
@@ -10,4 +10,4 @@ const Splashpage = () => (
   </div>
 );
 
-export default Splashpage;
+export default SplashPage;

@@ -13,13 +13,21 @@ export const getPosts = posts => (
   })
 );
 
-export const createPost = post => {
+export const createMediaPost = post => {
   return $.ajax({
     method: 'POST',
     url: 'api/posts',
     data: post,
     contentType: false,
     processData: false
+  });
+};
+
+export const createPost = post => {
+  return $.ajax({
+    method: 'POST',
+    url: 'api/posts',
+    data: post,
   });
 };
 

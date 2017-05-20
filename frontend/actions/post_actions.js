@@ -44,8 +44,22 @@ export const deletePost = id => dispatch => (
   .then(post => dispatch(removePost(post)))
 );
 
-export const createPost = post => dispatch => (
+export const createPost = post => dispatch => {
+  console.log(post);
+  return (
   PostAPIUtil
   .createPost(post)
-  .then(post => dispatch(receivePost(post)))
-);
+  .then(post => {
+    return dispatch(receivePost(post));
+  }));
+};
+
+export const createMediaPost = post => dispatch => {
+  console.log(post);
+  return (
+  PostAPIUtil
+  .createMediaPost(post)
+  .then(post => {
+    return dispatch(receivePost(post));
+  }));
+};
