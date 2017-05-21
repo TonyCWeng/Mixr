@@ -61,7 +61,7 @@ class QuoteForm extends React.Component {
           className="btn header-button"
           onClick={this.handleOpenModal}
         >
-        <span className="form-label">Quote</span>
+        <span className="btn-label">Quote</span>
         </button>
 
         <Modal

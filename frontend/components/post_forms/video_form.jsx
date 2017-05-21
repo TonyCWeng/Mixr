@@ -74,7 +74,7 @@ class VideoForm extends React.Component {
           className="btn header-button"
           onClick={this.handleOpenModal}
         >
-        <span className="form-label">Video</span>
+        <span className="btn-label">Video</span>
         </button>
 
         <Modal

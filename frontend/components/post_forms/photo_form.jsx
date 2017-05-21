@@ -75,7 +75,7 @@ class TextForm extends React.Component {
           className="btn header-button"
           onClick={this.handleOpenModal}
         >
-          <span className="form-label">Photo</span>
+          <span className="btn-label">Photo</span>
         </button>
 
         <Modal

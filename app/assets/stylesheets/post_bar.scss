@@ -3,7 +3,7 @@
   margin-bottom: 20px;
 }
 
-.forms {
+.post-forms {
   display: flex;
   background-color: white;
   min-height: 99px;
@@ -13,6 +13,63 @@
   margin: 0px 14px;
 }
 
-.form-label {
+.btn-label {
   color: #696969;
+  font-size: 16px;
+  font-weight: 300;
+  align-self: center;
+
+  padding: 0px 0px 20px 7px;
+}
+
+.audio-icon {
+  background: asset-url("audio");
+}
+
+.icon {
+  top: 16px;
+  width: 100%;
+  height: 100%;
+  align-self: center;
+}
+
+.btn-content {
+  min-width: 100%;
+  height: 100%;
+  border-radius: 3px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor:pointer;
+}
+
+.post-btn {
+  border-style: none;
+  background-color: #fff;
+  height: 100%;
+  width: 100%;
+  min-width: 14.2%;
+  min-height: 90px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.test {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.post-hover {
+  transition: .3s;
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: relative;
+  margin-left: 8px;
+}
+
+.post-btn:hover .post-hover {
+  transform: translate(0px, -4px);
 }

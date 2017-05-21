@@ -10,7 +10,7 @@ import VideoForm from './video_form';
 
 const PostBar = () => (
   <div className="bar-container">
-    <div className="forms">
+    <div className="post-forms">
       <TextForm />
       <PhotoForm />
       <QuoteForm />
