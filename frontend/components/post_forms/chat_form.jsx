@@ -61,7 +61,7 @@ class ChatForm extends React.Component {
           onClick={this.handleOpenModal}
         >
           <label className="btn-content">
-            <section className="icon audio-icon post-hover">
+            <section className="icon chat-icon post-hover">
             </section>
             <span className="btn-label">Chat</span>
           </label>

@@ -55,12 +55,17 @@ class TextForm extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="test">
         <button
-          className="btn header-button"
+          className="post-btn"
           onClick={this.handleOpenModal}
         >
-        <span className="btn-label">Text</span>
+          <label className="btn-content">
+            <section className="post-hover text-icon">
+            aA
+            </section>
+            <span className="btn-label">Text</span>
+          </label>
         </button>
 
         <Modal

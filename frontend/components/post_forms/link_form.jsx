@@ -58,12 +58,16 @@ class LinkForm extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="test">
         <button
-          className="btn header-button"
+          className="post-btn"
           onClick={this.handleOpenModal}
         >
-        <span className="btn-label">Link</span>
+          <label className="btn-content">
+            <section className="icon link-icon post-hover">
+            </section>
+            <span className="btn-label">Link</span>
+          </label>
         </button>
 
         <Modal

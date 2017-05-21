@@ -56,12 +56,16 @@ class QuoteForm extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="test">
         <button
-          className="btn header-button"
+          className="post-btn"
           onClick={this.handleOpenModal}
         >
-        <span className="btn-label">Quote</span>
+          <label className="btn-content">
+            <section className="icon quote-icon post-hover">
+            </section>
+            <span className="btn-label">Quote</span>
+          </label>
         </button>
 
         <Modal
