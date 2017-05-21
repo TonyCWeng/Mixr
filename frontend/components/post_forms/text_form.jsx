@@ -60,7 +60,7 @@ class TextForm extends React.Component {
           className="btn header-button"
           onClick={this.handleOpenModal}
         >
-          Text
+        <span className="form-label">Text</span>
         </button>
 
         <Modal

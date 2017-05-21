@@ -60,7 +60,7 @@ class ChatForm extends React.Component {
           className="btn header-button"
           onClick={this.handleOpenModal}
         >
-          Text
+        <span className="form-label">Chat</span>
         </button>
 
         <Modal

@@ -63,7 +63,7 @@ class LinkForm extends React.Component {
           className="btn header-button"
           onClick={this.handleOpenModal}
         >
-          Link
+        <span className="form-label">Link</span>
         </button>
 
         <Modal

@@ -9,14 +9,16 @@ import AudioForm from './audio_form';
 import VideoForm from './video_form';
 
 const PostBar = () => (
-  <div className="forms">
-    <TextForm />
-    <PhotoForm />
-    <QuoteForm />
-    <LinkForm />
-    <VideoForm />
-    <LinkForm />
-    <AudioForm />
+  <div className="bar-container">
+    <div className="forms">
+      <TextForm />
+      <PhotoForm />
+      <QuoteForm />
+      <LinkForm />
+      <ChatForm />
+      <AudioForm />
+      <VideoForm />
+    </div>
   </div>
 );
 

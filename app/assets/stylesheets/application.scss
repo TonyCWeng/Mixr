@@ -22,6 +22,10 @@ body {
    background-color: #36465d;
 }
 
+textarea {
+  resize: none;
+}
+
 .errors {
   color: red;
   list-style-type: none;

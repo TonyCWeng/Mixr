@@ -75,7 +75,7 @@ class AudioForm extends React.Component {
           className="btn header-button"
           onClick={this.handleOpenModal}
         >
-          Audio
+        <span className="form-label">Audio</span>
         </button>
 
         <Modal
