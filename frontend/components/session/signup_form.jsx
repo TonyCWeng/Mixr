@@ -22,7 +22,9 @@ class SignupForm extends React.Component {
     e.preventDefault();
     const user = this.state;
     this.props.clearErrors();
-    this.props.signup(user).then( () => this.props.closeModal()) ;
+    this.props.signup(user)
+              .then( () => this.props.history.push('/dashboard/'))
+              .then( () => this.props.closeModal()) ;
   }
 
   renderErrors() {

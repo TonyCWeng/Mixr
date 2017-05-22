@@ -1,18 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
-
+import { withRouter } from 'react-router-dom';
 import { style } from './modal_style';
 
 import LoginFormContainer from './login_form_container';
 
 class LoginModal extends React.Component {
-  constructor () {
-    super();
+  constructor (props) {
+    super(props);
     this.state = {
       showModal: false
     };
 
+    this.handleLogout = this.handleLogout.bind(this);
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
   }
@@ -25,13 +26,19 @@ class LoginModal extends React.Component {
     this.setState({ showModal: false });
   }
 
+  handleLogout(e) {
+    e.preventDefault();
+    this.props.logout()
+              .then( () => this.props.history.push('/'));
+  }
+
   render () {
     if (this.props.currentUser) {
       return (
         <div>
           <button
             className="btn header-button"
-            onClick={ this.props.logout }
+            onClick={ this.handleLogout }
             >
             Logout
           </button>
@@ -64,4 +71,4 @@ class LoginModal extends React.Component {
   }
 }
 
-export default LoginModal;
+export default withRouter(LoginModal);

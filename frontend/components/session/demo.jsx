@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class Demo extends React.Component {
   constructor(props) {
@@ -13,7 +14,8 @@ class Demo extends React.Component {
 
   demo(event) {
     event.preventDefault();
-    this.props.login(this.state);
+    this.props.login(this.state)
+              .then( () => this.props.history.push('/dashboard/'));
   }
 
   render() {
@@ -34,4 +36,4 @@ class Demo extends React.Component {
   }
 }
 
-export default Demo;
+export default withRouter(Demo);

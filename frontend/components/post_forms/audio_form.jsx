@@ -12,7 +12,7 @@ class AudioForm extends React.Component {
       title: '',
       body: '',
       source: '',
-      file_type: 'image',
+      file_type: 'audio',
       image: ''
     };
 
@@ -55,7 +55,7 @@ class AudioForm extends React.Component {
       title: '',
       body: '',
       source: '',
-      file_type: ''
+      file_type: 'audio'
     });
   }
 

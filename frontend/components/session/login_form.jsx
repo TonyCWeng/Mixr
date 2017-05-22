@@ -22,8 +22,11 @@ class LoginForm extends React.Component {
     e.preventDefault();
     const user = this.state;
     this.props.clearErrors();
-    this.props.login(user).then( () => this.props.closeModal()) ;
+    this.props.login(user)
+              .then( () => this.props.history.push('/dashboard/'))
+              .then( () => this.props.closeModal()) ;
   }
+
 
   renderErrors() {
     return(
