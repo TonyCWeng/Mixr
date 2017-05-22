@@ -91,9 +91,10 @@ class VideoForm extends React.Component {
 
         <div>
           <div className="post-form">
-            <span className="poster">{this.props.currentUser.username}</span>
-            <div className="post-field">
-              <input className="post-input"
+            <div className="primary-field">
+              <span className="poster">{this.props.currentUser.username}</span>
+              
+              <input className="primary-input"
                 type="file"
                 accept="video/*"
                 onChange={this.previewFile}

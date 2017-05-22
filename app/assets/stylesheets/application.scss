@@ -18,6 +18,10 @@
    font-family: 'Roboto', sans-serif;
 }
 
+*:focus {
+  outline:none
+}
+
 body {
    background-color: #36465d;
 }

@@ -69,7 +69,6 @@
   align-items: center;
   flex-direction: column;
   justify-content: space-between;
-  cursor:pointer;
 }
 
 .post-btn {
@@ -82,6 +81,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: 10px;
+  cursor: pointer;
 }
 
 .test {
@@ -99,4 +99,8 @@
 
 .post-btn:hover .post-hover {
   transform: translate(0px, -4px);
+}
+
+.post-btn:active .post-hover {
+  transform: translate(0px, 4px);
 }
