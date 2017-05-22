@@ -14,8 +14,7 @@ class Demo extends React.Component {
 
   demo(event) {
     event.preventDefault();
-    this.props.login(this.state)
-              .then( () => this.props.history.push('/dashboard/'));
+    this.props.login(this.state);
   }
 
   render() {

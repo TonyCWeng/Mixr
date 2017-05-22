@@ -30,7 +30,7 @@ class Feed extends React.Component {
                   <source src={post.source}  />
                   <source src={post.source}  />
             </video>
-            <PostItem post={post} />
+            
             <audio controls>
               <source src={post.source} />
             </audio>
