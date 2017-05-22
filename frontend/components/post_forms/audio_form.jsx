@@ -92,9 +92,10 @@ class AudioForm extends React.Component {
 
         <div>
           <div className="post-form">
-            <span className="poster">{this.props.currentUser.username}</span>
-            <div className="post-field">
-              <input className="post-input"
+            <div className="primary-field">
+              <span className="poster">{this.props.currentUser.username}</span>
+              
+              <input className="primary-input"
                 type="file"
                 accept="audio/*"
                 onChange={this.previewFile}
@@ -120,7 +121,7 @@ class AudioForm extends React.Component {
               Close
             </button>
 
-            <button className="btn form-button"
+            <button className="btn submit-button"
               onClick={this.handleSubmit}
               disabled={!this.state.source}
             >

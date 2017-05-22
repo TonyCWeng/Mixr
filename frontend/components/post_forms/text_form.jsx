@@ -100,7 +100,7 @@ class TextForm extends React.Component {
             </div>
 
             <div className="submission">
-              <div className='btn modal-button'>
+              <div className='modal-button'>
                 <button className="btn form-button" onClick={this.handleCloseModal}>
                   Close
                 </button>

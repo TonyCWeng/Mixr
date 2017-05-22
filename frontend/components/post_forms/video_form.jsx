@@ -93,7 +93,7 @@ class VideoForm extends React.Component {
           <div className="post-form">
             <div className="primary-field">
               <span className="poster">{this.props.currentUser.username}</span>
-              
+
               <input className="primary-input"
                 type="file"
                 accept="video/*"
@@ -119,7 +119,7 @@ class VideoForm extends React.Component {
               Close
             </button>
 
-            <button className="btn form-button"
+            <button className="btn submit-button"
               onClick={this.handleSubmit}
               disabled={!this.state.source}
             >

@@ -75,11 +75,13 @@ class ChatForm extends React.Component {
           style={style}
         >
 
-        <div>
+        <div className="blur">
           <div className="post-form">
-            <span className="poster">{this.props.currentUser.username}</span>
-            <div className="post-field">
-              <input className="post-input"
+
+            <div className="primary-field">
+              <span className="poster">{this.props.currentUser.username}</span>
+
+              <textarea className="primary-input"
                 type="text"
                 placeholder="Chat Title"
                 value={this.state.title}
@@ -88,7 +90,7 @@ class ChatForm extends React.Component {
             </div>
 
             <div className="post-field">
-              <input className="post-input"
+              <textarea className="post-input"
                 type="text"
                 placeholder="Your text here"
                 value={this.state.body}
@@ -96,19 +98,22 @@ class ChatForm extends React.Component {
               />
             </div>
 
+            <div className="submission">
+              <div className='modal-button'>
+                <button className="btn form-button" onClick={this.handleCloseModal}>
+                  Close
+                </button>
+
+                <button className="btn submit-button"
+                  onClick={this.handleSubmit}
+                  disabled={!this.state.body}
+                >
+                  Post
+                </button>
+              </div>
+            </div>
+
           </div>
-        </div>
-
-        <div className="submission">
-        <div className='btn modal-button'>
-          <button className="btn form-button" onClick={this.handleCloseModal}>
-            Close
-          </button>
-
-          <button className="btn form-button" onClick={this.handleSubmit}>
-            Post
-          </button>
-        </div>
         </div>
 
 
