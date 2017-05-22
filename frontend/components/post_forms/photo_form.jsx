@@ -93,10 +93,10 @@ class TextForm extends React.Component {
         <div className="blur">
           <div className="post-form">
 
+            <span className="poster">{this.props.currentUser.username}</span>
             <div className="primary-field">
 
-              <span className="poster">{this.props.currentUser.username}</span>
-              <input className="primary-input"
+              <input className="media-input"
                 type="file"
                 accept="image/*"
                 onChange={this.previewFile}

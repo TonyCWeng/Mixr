@@ -72,8 +72,8 @@ class TextForm extends React.Component {
           closeTimeoutMS={300}
           isOpen={this.state.showModal}
           contentLabel="Minimal Modal Example"
-          onRequestClose={this.handleCloseModal}
           style={style}
+          onRequestClose={this.handleCloseModal}
         >
 
         <div className="blur">
@@ -107,7 +107,7 @@ class TextForm extends React.Component {
 
                 <button className="btn submit-button"
                   onClick={this.handleSubmit}
-                  disabled={!this.state.title}
+                  disabled={!this.state.title && !this.state.body}
                 >
                   Post
                 </button>

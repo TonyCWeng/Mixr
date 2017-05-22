@@ -89,17 +89,19 @@ class VideoForm extends React.Component {
           style={style}
         >
 
-        <div>
+        <div className="blur">
           <div className="post-form">
-            <div className="primary-field">
-              <span className="poster">{this.props.currentUser.username}</span>
 
-              <input className="primary-input"
+            <div className="primary-field">
+
+              <span className="poster">{this.props.currentUser.username}</span>
+              <input className="media-input"
                 type="file"
                 accept="video/*"
                 onChange={this.previewFile}
               />
             </div>
+
 
             <div className="post-field">
               <textarea className="post-input"
@@ -110,21 +112,21 @@ class VideoForm extends React.Component {
               />
             </div>
 
-          </div>
-        </div>
+            <div className="submission">
+              <div className='modal-button'>
+                <button className="btn form-button" onClick={this.handleCloseModal}>
+                  Close
+                </button>
 
-        <div className="submission">
-          <div className='btn modal-button'>
-            <button className="btn form-button" onClick={this.handleCloseModal}>
-              Close
-            </button>
+                <button className="btn submit-button"
+                  onClick={this.handleSubmit}
+                  disabled={!this.state.title}
+                >
+                  Post
+                </button>
+              </div>
+            </div>
 
-            <button className="btn submit-button"
-              onClick={this.handleSubmit}
-              disabled={!this.state.source}
-            >
-              Post
-            </button>
           </div>
         </div>
 
