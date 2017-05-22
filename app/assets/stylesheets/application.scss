@@ -35,17 +35,8 @@ textarea {
 }
 
 .errors {
-  color: red;
+  color: #D63301;
   list-style-type: none;
-}
-
-.session-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 250px;
-  flex-direction: column;
-  padding: 0px 40px;
 }
 
 .form-item {
@@ -76,14 +67,6 @@ textarea {
 .modal-button {
   display: flex;
   justify-content: space-between;
-}
-
-.submission {
-  height: 60px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  border-top: 1px solid #9AA2AE;
 }
 
 .auth-button {
