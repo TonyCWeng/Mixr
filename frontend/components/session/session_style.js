@@ -9,12 +9,12 @@ export const style = {
     zIndex          : 10
   },
   content : {
-    width           : '540px',
-    position        : 'fixed',
-    top             : '25%',
-    left            : '30%',
-    right           : '30%',
-    bottom          : '30%',
+    width           : '300px',
+    position        : 'absolute',
+    top             : '30%',
+    left            : '40%',
+    right           : '0px',
+    bottom          : '35%',
     border          : '1px solid #ccc',
     padding         : '20px',
     zIndex          : 11

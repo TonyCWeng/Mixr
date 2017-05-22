@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
+ html, body {
+   padding: 0;
+   margin: 0;
+ }
 
 * {
    font-family: 'Roboto', sans-serif;
@@ -85,8 +89,4 @@ textarea {
 .auth-button {
   height: 32px;
   width: 75px;
-}
-
-.ReactModal__Content.ReactModal__Content--after-open {
-  min-width: 540px;
 }

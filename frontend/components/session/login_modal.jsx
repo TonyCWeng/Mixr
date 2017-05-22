@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 import { withRouter } from 'react-router-dom';
-import { style } from './modal_style';
+import { style } from './session_style';
 
 import LoginFormContainer from './login_form_container';
 
@@ -54,7 +54,7 @@ class LoginModal extends React.Component {
             Login
           </button>
 
-          <Modal key='login'
+          <Modal
             closeTimeoutMS={300}
             isOpen={this.state.showModal}
             contentLabel="Minimal Modal Example"

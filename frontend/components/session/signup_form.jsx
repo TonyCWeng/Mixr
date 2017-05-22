@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -77,11 +78,11 @@ class SignupForm extends React.Component {
 
         <div className="submission">
         <div className='btn modal-button'>
-          <button className="btn auth-button" onClick={this.props.closeModal}>
+          <button className="btn form-button" onClick={this.props.closeModal}>
             Close
           </button>
 
-          <button className="btn auth-button" onClick={this.handleClick}>
+          <button className="btn submit-button" onClick={this.handleClick}>
             Submit
           </button>
         </div>
@@ -93,4 +94,4 @@ class SignupForm extends React.Component {
 }
 
 
-export default SignupForm;
+export default withRouter(SignupForm);
