@@ -86,9 +86,14 @@ textarea {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  border-top: 1px solid #9AA2AE;
 }
 
 .auth-button {
   height: 32px;
   width: 75px;
+}
+
+.ReactModal__Content.ReactModal__Content--after-open {
+  min-width: 540px;
 }
