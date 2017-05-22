@@ -24,6 +24,7 @@ class LoginModal extends React.Component {
 
   handleCloseModal () {
     this.setState({ showModal: false });
+    this.props.clearErrors();
   }
 
   handleLogout(e) {

@@ -10,6 +10,7 @@ class LoginForm extends React.Component {
       password: ''
     };
 
+    this.handleClose = this.handleClose.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -26,6 +27,12 @@ class LoginForm extends React.Component {
     this.props.login(user)
               .then( () => this.props.history.push('/dashboard/'))
               .then( () => this.props.closeModal()) ;
+  }
+
+  handleClose(e) {
+    e.preventDefault();
+    this.props.clearErrors();
+    this.props.closeModal();
   }
 
 

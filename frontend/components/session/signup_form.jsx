@@ -10,6 +10,7 @@ class SignupForm extends React.Component {
       password: ''
     };
 
+    this.handleClose = this.handleClose.bind(this);
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -28,11 +29,17 @@ class SignupForm extends React.Component {
               .then( () => this.props.closeModal()) ;
   }
 
+  handleClose(e) {
+    e.preventDefault();
+    this.props.clearErrors();
+    this.props.closeModal();
+  }
+
   renderErrors() {
     return(
       <ul>
         {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>{error}</li>
+          <li className="errors" key={`error-${i}`}>{error}</li>
         ))}
       </ul>
     );
@@ -56,7 +63,7 @@ class SignupForm extends React.Component {
           </div>
 
           <div className="form-item">
-            <label >Email: </label>
+            <label>Email: </label>
             <input
               type="text"
               value={this.state.email}
@@ -78,7 +85,7 @@ class SignupForm extends React.Component {
 
         <div className="submission">
         <div className='btn modal-button'>
-          <button className="btn form-button" onClick={this.props.closeModal}>
+          <button className="btn form-button" onClick={this.handleClose}>
             Close
           </button>
 

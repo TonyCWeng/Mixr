@@ -2,12 +2,15 @@ import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import LoginModal from './login_modal';
 
+import { clearErrors } from '../../actions/error_actions';
+
 const mapStateToProps = ({ session }) => ({
   currentUser: session.currentUser,
 });
 
 const mapDispatchToProps = dispatch => ({
-  logout: () => dispatch(logout())
+  logout: () => dispatch(logout()),
+  clearErrors: () => dispatch(clearErrors())
 });
 
 

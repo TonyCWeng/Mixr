@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 
-import { style } from './modal_style';
+import { style } from './session_style';
 
 import SignupFormContainer from './signup_form_container';
 
@@ -23,6 +23,7 @@ class SignupModal extends React.Component {
 
   handleCloseModal () {
     this.setState({ showModal: false });
+    this.props.clearErrors();
   }
 
   render () {
