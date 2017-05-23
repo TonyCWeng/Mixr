@@ -17,12 +17,10 @@ class FeedItem extends React.Component {
     return (
       <div className="post-container">
 
-        <img src={this.props.post.image} />
-
         <div className="post">
-          <span className="poster">{this.props.post.username}</span>
+          <div className="poster">{this.props.post.username}</div>
 
-          <div className="post-body">
+          <div className="post-content">
             <p className="title">{this.props.post.title}</p>
           </div>
 
@@ -42,7 +40,11 @@ class FeedItem extends React.Component {
           <span className="poster">{this.props.post.username}</span>
 
           <div className="post-content">
-
+            <h1 className="link-content">
+              <a href={`http://${this.props.post.title}`}>
+                {this.props.post.title}
+              </a>
+            </h1>
           </div>
 
           <div className="description-container">

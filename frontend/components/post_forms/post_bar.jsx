@@ -8,18 +8,29 @@ import ChatForm from './chat_form';
 import AudioForm from './audio_form';
 import VideoForm from './video_form';
 
-const PostBar = () => (
-  <div className="bar-container">
-    <div className="post-forms">
-      <TextForm />
-      <PhotoForm />
-      <QuoteForm />
-      <LinkForm />
-      <ChatForm />
-      <AudioForm />
-      <VideoForm />
-    </div>
-  </div>
-);
+class PostBar extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    console.log(this.props);
+    return (
+      <div className="bar-container">
+        <img className="avatar" src={this.props.currentUser.avatar_url} />
+        <div className="post-forms">
+          <TextForm />
+          <PhotoForm />
+          <QuoteForm />
+          <LinkForm />
+          <ChatForm />
+          <AudioForm />
+          <VideoForm />
+        </div>
+      </div>
+    );
+  }
+}
+
 
 export default PostBar;
