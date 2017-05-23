@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Post.destroy_all
-
+User.destroy_all
 
 User.create(username: "Guest", password: 'password', email: 'something@gmail.com')
 User.create(username: "Tony", password: 'password', email: 'tony@gmail.com')
@@ -15,5 +15,4 @@ User.create(username: "Joyce", password: 'password', email: 'sweets@gmail.com')
 User.create(username: "Amanda", password: 'password', email: 'armads@gmail.com')
 
 text = Post.create(author_id: 1, title: "google.com", body: "Moon.", post_type: "link")
-text = Post.create(author_id: 1, source:"https://soundcloud.com/wearecathedrals/sets/cathedrals-ep", body:"Cathedral's EP", post_type:"audio")
 text = Post.create(author_id: 1, source:"https://s3-us-west-1.amazonaws.com/mixr-dev/Footsteps+in+the+Snow+-+FFXIV.mp3", body:"FFXIV OST", post_type:"audio")
