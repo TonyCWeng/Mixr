@@ -9,7 +9,7 @@ export const style = {
     zIndex          : 10
   },
   content : {
-    height          : '325px',
+    minHeight       : '325px',
     width           : '540px',
     position        : 'fixed',
     top             : '25%',

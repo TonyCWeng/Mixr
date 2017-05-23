@@ -32,6 +32,44 @@ class FeedItem extends React.Component {
     );
   }
 
+  photo() {
+    return (
+      <div className="post-container">
+
+        <div className="post">
+          <div className="poster">{this.props.post.username}</div>
+
+          <div className="post-content">
+            <img className="photo-content" src={this.props.post.source} />
+          </div>
+
+          <div className="description-container">
+            <p className="post-description">{this.props.post.body}</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  quote() {
+    return (
+      <div className="post-container">
+
+        <div className="post">
+          <div className="poster">{this.props.post.username}</div>
+
+          <div className="post-content">
+            <p className="quote-content">{this.props.post.title}</p>
+          </div>
+
+          <div className="description-container">
+            <p className="post-description">{this.props.post.body}</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   link() {
     return (
       <div className="post-container">
@@ -45,6 +83,48 @@ class FeedItem extends React.Component {
                 {this.props.post.title}
               </a>
             </h1>
+          </div>
+
+          <div className="description-container">
+            <p className="post-description">{this.props.post.body}</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  chat() {
+    return (
+      <div className="post-container">
+
+        <div className="post">
+          <div className="poster">{this.props.post.username}</div>
+
+          <div className="post-content">
+            <p className="title">{this.props.post.title}</p>
+          </div>
+
+          <div className="description-container">
+            <p className="post-description">{this.props.post.body}</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  audio() {
+    return (
+      <div className="post-container">
+
+        <div className="post">
+          <div className="poster">{this.props.post.username}</div>
+
+          <div className="post-content">
+            <audio controls>
+                <source src={this.props.post.source} type="audio/mp3"></source>
+                <source src={this.props.post.source} type="audio/ogg"></source>
+                <source src={this.props.post.source} type="audio/wav"></source>
+            </audio>
           </div>
 
           <div className="description-container">

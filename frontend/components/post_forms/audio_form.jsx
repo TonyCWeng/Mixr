@@ -103,7 +103,11 @@ class AudioForm extends React.Component {
                 onChange={this.previewFile}
               />
             </div>
-
+            <audio controls>
+                <source src={this.state.source} type="audio/mp3"></source>
+                <source src={this.state.source} type="audio/ogg"></source>
+                <source src={this.state.source} type="audio/wav"></source>
+            </audio>
 
             <div className="post-field">
               <textarea className="post-input"

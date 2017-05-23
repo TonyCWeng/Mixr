@@ -103,6 +103,11 @@ class VideoForm extends React.Component {
               />
             </div>
 
+            <video width="540" height="360" controls>
+                <source src={this.state.source} type="video/mp4" />
+                <source src={this.state.source} type="video/ogg" />
+            </video>
+
 
             <div className="post-field">
               <textarea className="post-input"

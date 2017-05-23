@@ -102,7 +102,7 @@ class TextForm extends React.Component {
                 onChange={this.previewFile}
               />
             </div>
-            <img src={this.state.source} />
+            <img className="preview" src={this.state.source} />
 
             <div className="post-field">
               <textarea className="post-input"

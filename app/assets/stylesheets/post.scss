@@ -32,7 +32,7 @@
 
 .title {
   font-size: 24px;
-  font-weight: 300;
+  font-weight: 500;
   margin: 0px;
 }
 
@@ -50,4 +50,18 @@
 
 .poster {
   margin-bottom: 10px;
+}
+
+.quote-content {
+  font-size: 24px;
+}
+
+.photo-content {
+  max-width: 520px;
+  max-height: 200px;
+}
+
+.preview {
+  max-width: 500px;
+  max-height: 200px;
 }

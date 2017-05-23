@@ -45,7 +45,6 @@ export const deletePost = id => dispatch => (
 );
 
 export const createPost = post => dispatch => {
-  console.log(post);
   return (
   PostAPIUtil
   .createPost(post)
@@ -55,7 +54,6 @@ export const createPost = post => dispatch => {
 };
 
 export const createMediaPost = post => dispatch => {
-  console.log(post);
   return (
   PostAPIUtil
   .createMediaPost(post)

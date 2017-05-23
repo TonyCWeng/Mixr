@@ -14,7 +14,6 @@ class PostBar extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <div className="bar-container">
         <img className="avatar" src={this.props.currentUser.avatar_url} />

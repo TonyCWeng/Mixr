@@ -93,7 +93,7 @@ class QuoteForm extends React.Component {
             <div className="post-field">
               <textarea className="post-input"
                 type="text"
-                placeholder="Source"
+                placeholder="— Source"
                 value={this.state.body}
                 onChange={this.update('body')}
               />
