@@ -14,6 +14,4 @@ User.create(username: "Jack", password: 'password', email: 'jack@gmail.com')
 User.create(username: "Joyce", password: 'password', email: 'sweets@gmail.com')
 User.create(username: "Amanda", password: 'password', email: 'armads@gmail.com')
 
-text = Post.create(author_id: 1, title: "Sun", body: "Moon.")
-text2 = Post.create(author_id: 1, title: "Stars", body: "Moon.")
-text3 = Post.create(author_id: 1, title: "Mars", body: "Moon.")
+text = Post.create(author_id: 1, title: "google.com", body: "Moon.", post_type: "link")

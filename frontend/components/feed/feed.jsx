@@ -1,4 +1,5 @@
 import React from 'react';
+import FeedItem from './feed_item';
 
 class Feed extends React.Component {
   constructor(props) {
@@ -21,22 +22,14 @@ class Feed extends React.Component {
       return null;
     } else {
     return(
-      <ul>
+      <ul className="feed">
         {this.props.posts.reverse().map((post, i) => (
-          <li key={`post-${i}`}>
-            <img src={post.source} />
-          
-            <video width="540" height="360" controls>
-              <source src={post.source}  />
-            </video>
-
-            <audio controls>
-              <source src={post.source} />
-            </audio>
-
-            <br></br>
-            {post.body}
+        <div key={`post-item-${i}`} className="item-container">
+          <img className="avatar" src={post.avatar_url} />
+          <li key={`post-${i}`} className="feed-item">
+            <FeedItem post={post} />
           </li>
+        </div>
         ))}
       </ul>
     );

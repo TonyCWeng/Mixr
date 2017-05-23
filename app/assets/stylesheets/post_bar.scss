@@ -1,5 +1,6 @@
 .bar-container {
   display: flex;
+  height: 110px;
   margin-bottom: 20px;
 }
 
@@ -9,9 +10,10 @@
   min-height: 99px;
   min-width: 540px;
   border-radius: 3px;
-  width: 100%;
-  margin: 0px 14px;
+
+  margin: 0px 41px;
 }
+//margin is temporarily 63px
 
 .btn-label {
   color: #696969;
@@ -19,7 +21,7 @@
   font-weight: 300;
   align-self: center;
 
-  padding: 0px 0px 20px 7px;
+  padding: 0px 0px 10px 7px;
 }
 
 .text-icon {
@@ -85,6 +87,7 @@
 }
 
 .test {
+  width: 14%;
   display: flex;
   margin-bottom: 20px;
 }

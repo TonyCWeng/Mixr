@@ -13,7 +13,7 @@ class QuoteForm extends React.Component {
       title: '',
       body: '',
       source: '',
-      file_type: ''
+      post_type: 'quote'
     };
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -38,7 +38,7 @@ class QuoteForm extends React.Component {
       title: '',
       body: '',
       source: '',
-      file_type: ''
+      post_type: ''
     });
   }
 
@@ -48,7 +48,7 @@ class QuoteForm extends React.Component {
       title: `"${this.state.title}"`,
       body: `—${this.state.body}`,
       source: this.state.source,
-      file_type: this.state.title
+      post_type: this.state.post_type
     };
     this.props.createPost({post})
               .then(this.handleCloseModal());

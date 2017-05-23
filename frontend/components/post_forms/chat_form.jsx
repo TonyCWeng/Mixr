@@ -12,7 +12,7 @@ class ChatForm extends React.Component {
       title: '',
       body: '',
       source: '',
-      file_type: ''
+      post_type: 'chat'
     };
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -37,7 +37,7 @@ class ChatForm extends React.Component {
       title: '',
       body: '',
       source: '',
-      file_type: ''
+      post_type: ''
     });
   }
 
@@ -47,7 +47,7 @@ class ChatForm extends React.Component {
       title: this.state.title,
       body: this.state.body,
       source: this.state.source,
-      file_type: this.state.title
+      post_type: this.state.post_type
     };
     this.props.createPost({post})
               .then(this.handleCloseModal());

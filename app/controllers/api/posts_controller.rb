@@ -33,6 +33,6 @@ class Api::PostsController < ApplicationController
                   :title,
                   :body,
                   :source,
-                  :file_type)
+                  :post_type)
   end
 end

@@ -1,0 +1,42 @@
+.feed {
+
+}
+
+.feed-item {
+  padding: 10px;
+  list-style-type: none;
+  display: flex;
+  width: 540px;
+  background: #fff;
+  border: 1px solid #fff;
+  border-radius: 3px;
+}
+
+.item-container {
+  display: flex;
+  margin: 15px 0 0;
+  border-radius: 3px;
+}
+
+.post {
+
+}
+
+.avatar {
+  height: 64px;
+  weight: 64px;
+  margin-right: 20px;
+  border-radius: 3px;
+  background-color: #fff;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 300;
+  margin: 0px;
+}
+
+.post-description {
+  font-size: 14px;
+  font-weight: 300;
+}

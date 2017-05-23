@@ -12,7 +12,7 @@ class LinkForm extends React.Component {
       title: '',
       body: '',
       source: '',
-      file_type: '',
+      post_type: 'link',
       image: ''
     };
 
@@ -38,7 +38,7 @@ class LinkForm extends React.Component {
       title: '',
       body: '',
       source: '',
-      file_type: ''
+      post_type: ''
     });
   }
 
@@ -48,7 +48,7 @@ class LinkForm extends React.Component {
       title: this.state.title,
       body: this.state.body,
       source: this.state.source,
-      file_type: '',
+      post_type: this.state.post_type,
       image: ''
     };
 
