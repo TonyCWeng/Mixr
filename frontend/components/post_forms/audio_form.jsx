@@ -19,7 +19,6 @@ class AudioForm extends React.Component {
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.updateFile = this.updateFile.bind(this);
     this.previewFile = this.previewFile.bind(this);
   }
 
@@ -42,6 +41,7 @@ class AudioForm extends React.Component {
     if (file) {
       reader.readAsDataURL(file);
     }
+
   }
 
   handleOpenModal () {
@@ -65,7 +65,7 @@ class AudioForm extends React.Component {
     formData.append('post[author_id]', this.state.author_id);
     formData.append('post[source]', this.state.source);
     formData.append('post[body]', this.state.body);
-    formData.append('post[post_type]', this.state.post_type);
+    formData.append('post[post_type]', 'audio');
     formData.append('post[image]', this.state.image);
     this.props.createMediaPost(formData)
               .then(this.handleCloseModal());

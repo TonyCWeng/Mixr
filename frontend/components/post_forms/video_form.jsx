@@ -54,7 +54,6 @@ class VideoForm extends React.Component {
       title: '',
       body: '',
       source: '',
-      post_type: '',
       image: ''
     });
   }
@@ -64,7 +63,7 @@ class VideoForm extends React.Component {
     formData.append('post[author_id]', this.state.author_id);
     formData.append('post[source]', this.state.source);
     formData.append('post[body]', this.state.body);
-    formData.append('post[post_type]', this.state.post_type);
+    formData.append('post[post_type]', 'video');
     formData.append('post[image]', this.state.image);
     this.props.createMediaPost(formData)
               .then(this.handleCloseModal());

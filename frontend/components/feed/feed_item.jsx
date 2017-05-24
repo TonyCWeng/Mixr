@@ -10,7 +10,7 @@ class FeedItem extends React.Component {
     this.link = this.link.bind(this);
     this.chat = this.chat.bind(this);
     this.audio = this.audio.bind(this);
-    // this.video = this.video.bind(this);
+    this.video = this.video.bind(this);
   }
 
   text() {
@@ -120,11 +120,33 @@ class FeedItem extends React.Component {
           <div className="poster">{this.props.post.username}</div>
 
           <div className="post-content">
-            <audio controls>
-                <source src={this.props.post.source} type="audio/mp3"></source>
-                <source src={this.props.post.source} type="audio/ogg"></source>
-                <source src={this.props.post.source} type="audio/wav"></source>
+            <audio controls height="30">
+              <source src={this.props.post.source} type="audio/mp3"></source>
+              <source src={this.props.post.source} type="audio/ogg"></source>
+              <source src={this.props.post.source} type="audio/wav"></source>
             </audio>
+          </div>
+
+          <div className="description-container">
+            <p className="post-description">{this.props.post.body}</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  video() {
+    return (
+      <div className="post-container">
+
+        <div className="post">
+          <div className="poster">{this.props.post.username}</div>
+
+          <div className="post-content">
+            <video className="video-content" width="520" height="340" controls>
+                <source src={this.props.post.source} type="video/mp4" />
+                <source src={this.props.post.source} type="video/ogg" />
+            </video>
           </div>
 
           <div className="description-container">
@@ -138,7 +160,7 @@ class FeedItem extends React.Component {
 
   render() {
     const { post_type } = this.props.post;
-
+    
     switch(post_type) {
       case "text":
         return this.text();
@@ -152,8 +174,8 @@ class FeedItem extends React.Component {
         return this.chat();
       case "audio":
         return this.audio();
-      // case "video":
-      //   return this.video();
+      case "video":
+        return this.video();
       default:
         return this.text();
     }

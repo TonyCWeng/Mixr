@@ -37,7 +37,6 @@ class ChatForm extends React.Component {
       title: '',
       body: '',
       source: '',
-      post_type: ''
     });
   }
 
@@ -47,7 +46,7 @@ class ChatForm extends React.Component {
       title: this.state.title,
       body: this.state.body,
       source: this.state.source,
-      post_type: this.state.post_type
+      post_type: 'chat'
     };
     this.props.createPost({post})
               .then(this.handleCloseModal());
