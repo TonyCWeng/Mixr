@@ -8,7 +8,6 @@ class TextForm extends React.Component {
     super(props);
     this.state = {
       showModal: false,
-      author_id: props.currentUser.id,
       title: '',
       body: '',
       source: '',
@@ -33,7 +32,6 @@ class TextForm extends React.Component {
   handleCloseModal () {
     this.setState({
       showModal: false,
-      author_id: '',
       title: '',
       body: '',
       source: '',
@@ -43,7 +41,6 @@ class TextForm extends React.Component {
 
   handleSubmit () {
     const post = {
-      author_id: this.state.author_id,
       title: this.state.title,
       body: this.state.body,
       source: this.state.source,

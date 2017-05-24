@@ -1,19 +1,18 @@
 class Api::LikesController < ApplicationController
   def create
     @like = Like.new(like_params)
+    @like.user_id = current_user.id
     @like.save
-    @post = Post.find(params[:id])
-    render 'api/posts/show'
+    render json: @like
   end
 
   def destroy
     @like = Like.find(params[:id])
     @like.destroy
-    @post = Post.find(params[:id])
-    render 'api/posts/show'
+    render json: @like
   end
 
   def like_params
-    params.require(:like).permit(:user_id, :post_id)
+    params.require(:like).permit(:post_id)
   end
 end

@@ -5,13 +5,18 @@ import Root from './components/root';
 import Modal from 'react-modal';
 //testing
 import { signup, login, logout } from './actions/session_actions';
-import { requestSinglePost, requestAllPosts, createPost, deletePost } from './actions/post_actions';
-// import { getPost, getPosts, createPost, deletePost } from './util/post_api_util';
+import { requestSinglePost,
+         requestAllPosts,
+         createPost,
+         deletePost,
+         likePost,
+         dislikePost } from './actions/post_actions';
+import { createLike, deleteLike } from './util/like_api_util';
 
-window.deletePost = deletePost;
-window.createPost = createPost;
-// window.getPost = getPost;
-// window.getPosts = getPosts;
+window.likePost = likePost;
+window.dislikePost = dislikePost;
+window.createLike = createLike;
+window.deleteLike = deleteLike;
 window.requestAllPosts = requestAllPosts;
 window.requestSinglePost = requestSinglePost;
 window.signup = signup;

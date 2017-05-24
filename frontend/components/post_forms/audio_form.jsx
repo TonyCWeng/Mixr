@@ -8,7 +8,6 @@ class AudioForm extends React.Component {
     super(props);
     this.state = {
       showModal: false,
-      author_id: props.currentUser.id,
       title: '',
       body: '',
       source: '',
@@ -51,7 +50,6 @@ class AudioForm extends React.Component {
   handleCloseModal () {
     this.setState({
       showModal: false,
-      author_id: '',
       title: '',
       body: '',
       source: '',
@@ -62,7 +60,6 @@ class AudioForm extends React.Component {
 
   handleSubmit () {
     let formData = new FormData();
-    formData.append('post[author_id]', this.state.author_id);
     formData.append('post[source]', this.state.source);
     formData.append('post[body]', this.state.body);
     formData.append('post[post_type]', 'audio');

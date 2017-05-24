@@ -9,6 +9,8 @@ import * as LikeAPIUtil from '../util/like_api_util';
 export const LIKE_POST = 'LIKE_POST';
 export const DISLIKE_POST = 'DISLIKE_POST';
 
+export const RECEIVE_LIKE = 'RECEIVE_LIKE';
+
 const receivePost = post => {
   return {
     type: RECEIVE_POST,
@@ -66,12 +68,18 @@ export const createMediaPost = post => dispatch => {
   }));
 };
 
+export const receiveLike = like => ({
+  type: RECEIVE_LIKE,
+  like
+});
+
+
 export const likePost = like => dispatch => {
   return (
     LikeAPIUtil
     .createLike(like)
-    .then(post => {
-      return dispatch(receivePost(post));
+    .then(like => {
+      return dispatch(receiveLike(like));
   }));
 };
 
@@ -79,7 +87,7 @@ export const dislikePost = id => dispatch => {
   return (
     LikeAPIUtil
     .deleteLike(id)
-    .then(post => {
-      return dispatch(receivePost(post));
+    .then(like => {
+      return dispatch(receiveLike(like));
   }));
 };

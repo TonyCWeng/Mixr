@@ -7,3 +7,4 @@
   json.avatar_url asset_path(post.author.avatar.url)
   json.post_type post.post_type
   json.image_url asset_path(post.image.url)
+  json.likes post.likes.map(&:user_id)
