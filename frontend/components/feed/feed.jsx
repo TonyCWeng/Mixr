@@ -27,7 +27,11 @@ class Feed extends React.Component {
         <div key={`post-item-${i}`} className="item-container">
           <img className="avatar" src={post.avatar_url} />
           <li key={`post-${i}`} className="feed-item">
-            <FeedItem post={post} />
+            <FeedItem post={post}
+              likePost={this.props.likePost}
+              dislikePost={this.props.dislikePost}
+              currentUser={this.props.currentUser}
+            />
           </li>
         </div>
         ))}

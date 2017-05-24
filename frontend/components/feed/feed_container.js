@@ -4,7 +4,9 @@ import { selectAllPosts } from '../../reducers/selectors';
 import {
   requestSinglePost,
   requestAllPosts,
-  deletePost
+  deletePost,
+  likePost,
+  dislikePost
 }
 from '../../actions/post_actions';
 
@@ -15,7 +17,9 @@ const mapStateToProps = ({posts, session}) => ({
 
 const mapDispatchToProps = dispatch => ({
   requestAllPosts: () => dispatch(requestAllPosts()),
-  deletePost: id => dispatch(deletePost(id))
+  deletePost: id => dispatch(deletePost(id)),
+  likePost: () => dispatch(likePost()),
+  dislikePost: () => dispatch(dislikePost())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Feed);

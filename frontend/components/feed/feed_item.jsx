@@ -11,6 +11,32 @@ class FeedItem extends React.Component {
     this.chat = this.chat.bind(this);
     this.audio = this.audio.bind(this);
     this.video = this.video.bind(this);
+
+    this.toggleLike = this.toggleLike.bind(this);
+  }
+
+  toggleLike() {
+    if (this.props.post.likes.includes(this.props.currentUser.id)) {
+      this.props.dislikePost(this.props.post.id);
+    } else {
+      this.props.likePost(this.props.post.id);
+    }
+  }
+
+  heart() {
+    if (this.props.post.likes.includes(this.props.currentUser.id)) {
+      return (
+        <div>
+          <button onClick={this.toggleLike}>UnLove</button>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <button onClick={this.toggleLike}>Love</button>
+        </div>
+      );
+    }
   }
 
   text() {
@@ -26,6 +52,10 @@ class FeedItem extends React.Component {
 
           <div className="description-container">
             <p className="post-description">{this.props.post.body}</p>
+          </div>
+
+          <div className="item-footer">
+            {this.heart()}
           </div>
         </div>
       </div>
@@ -88,6 +118,11 @@ class FeedItem extends React.Component {
           <div className="description-container">
             <p className="post-description">{this.props.post.body}</p>
           </div>
+
+          <div className="item-footer">
+            {this.heart()}
+          </div>
+
         </div>
       </div>
     );
@@ -160,7 +195,7 @@ class FeedItem extends React.Component {
 
   render() {
     const { post_type } = this.props.post;
-    
+
     switch(post_type) {
       case "text":
         return this.text();

@@ -11,12 +11,10 @@ import { requestSinglePost,
          deletePost,
          likePost,
          dislikePost } from './actions/post_actions';
-import { createLike, deleteLike } from './util/like_api_util';
 
 window.likePost = likePost;
 window.dislikePost = dislikePost;
-window.createLike = createLike;
-window.deleteLike = deleteLike;
+
 window.requestAllPosts = requestAllPosts;
 window.requestSinglePost = requestSinglePost;
 window.signup = signup;
