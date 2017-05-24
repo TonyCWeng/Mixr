@@ -13,6 +13,7 @@ class TextForm extends React.Component {
       body: '',
       source: '',
       post_type: 'photo',
+      image: ''
     };
 
     this.handleOpenModal = this.handleOpenModal.bind(this);
@@ -54,7 +55,8 @@ class TextForm extends React.Component {
       title: '',
       body: '',
       source: '',
-      post_type: ''
+      post_type: '',
+      image: ''
     });
   }
 
@@ -64,6 +66,7 @@ class TextForm extends React.Component {
     formData.append('post[source]', this.state.source);
     formData.append('post[body]', this.state.body);
     formData.append('post[post_type]', this.state.post_type);
+    formData.append('post[image]', this.state.image);
     this.props.createMediaPost(formData)
               .then(this.handleCloseModal());
   }

@@ -5,11 +5,11 @@ class FeedItem extends React.Component {
     super(props);
 
     this.text = this.text.bind(this);
-    // this.photo = this.photo.bind(this);
-    // this.quote = this.quote.bind(this);
-    // this.link = this.link.bind(this);
-    // this.chat = this.chat.bind(this);
-    // this.audio = this.audio.bind(this);
+    this.photo = this.photo.bind(this);
+    this.quote = this.quote.bind(this);
+    this.link = this.link.bind(this);
+    this.chat = this.chat.bind(this);
+    this.audio = this.audio.bind(this);
     // this.video = this.video.bind(this);
   }
 
@@ -152,8 +152,8 @@ class FeedItem extends React.Component {
         return this.chat();
       case "audio":
         return this.audio();
-      case "video":
-        return this.video();
+      // case "video":
+      //   return this.video();
       default:
         return this.text();
     }

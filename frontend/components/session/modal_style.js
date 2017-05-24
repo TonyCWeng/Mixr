@@ -10,12 +10,12 @@ export const style = {
   },
   content : {
     minHeight       : '325px',
-    width           : '540px',
+    minWidth        : '540px',
     position        : 'fixed',
     top             : '25%',
     left            : '30%',
     right           : '30%',
-    bottom          : '30%',
+    bottom: 'none',
     border          : '1px solid #ccc',
     padding         : '20px',
     zIndex          : 11

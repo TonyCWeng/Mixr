@@ -54,7 +54,8 @@ class VideoForm extends React.Component {
       title: '',
       body: '',
       source: '',
-      post_type: ''
+      post_type: '',
+      image: ''
     });
   }
 
@@ -64,6 +65,7 @@ class VideoForm extends React.Component {
     formData.append('post[source]', this.state.source);
     formData.append('post[body]', this.state.body);
     formData.append('post[post_type]', this.state.post_type);
+    formData.append('post[image]', this.state.image);
     this.props.createMediaPost(formData)
               .then(this.handleCloseModal());
   }
@@ -103,7 +105,7 @@ class VideoForm extends React.Component {
               />
             </div>
 
-            <video width="540" height="360" controls>
+            <video width="200" height="200" disabled={!this.state.source} controls>
                 <source src={this.state.source} type="video/mp4" />
                 <source src={this.state.source} type="video/ogg" />
             </video>

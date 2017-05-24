@@ -32,7 +32,7 @@ class User < ApplicationRecord
     primary_key: :id,
     foreign_key: :author_id
 
-  has_attached_file :avatar, default_url: "https://s3-us-west-1.amazonaws.com/mixr-dev/avatar.png"
+  has_attached_file :avatar, default_url: "https://s3-us-west-1.amazonaws.com/mixr-dev/posts/images/000/000/027/original/avatar.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   validates_attachment_size :avatar, in: 0..20.megabyte
 
