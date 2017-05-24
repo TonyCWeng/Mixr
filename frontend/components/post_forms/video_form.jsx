@@ -104,7 +104,7 @@ class VideoForm extends React.Component {
               />
             </div>
 
-            <video width="200" height="200" disabled={!this.state.source} controls>
+            <video width="200" height="200" controls>
                 <source src={this.state.source} type="video/mp4" />
                 <source src={this.state.source} type="video/ogg" />
             </video>

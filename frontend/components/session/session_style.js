@@ -14,7 +14,7 @@ export const style = {
     top             : '30%',
     left            : '40%',
     right           : '0px',
-    bottom          : '35%',
+    bottom          : 'none',
     border          : '1px solid #ccc',
     padding         : '20px',
     zIndex          : 11
