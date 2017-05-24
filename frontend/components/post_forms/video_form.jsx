@@ -109,7 +109,6 @@ class VideoForm extends React.Component {
                 <source src={this.state.source} type="video/ogg" />
             </video>
 
-
             <div className="post-field">
               <textarea className="post-input"
                 type="text"

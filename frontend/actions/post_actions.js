@@ -5,6 +5,10 @@ export const RECEIVE_ALL_POSTS = 'RECEIVE_ALL_POSTS';
 export const RECEIVE_NEW_POST = 'RECEIVE_NEW_POST';
 export const REMOVE_POST = 'REMOVE_POST';
 
+import * as LikeAPIUtil from '../util/like_api_util';
+export const LIKE_POST = 'LIKE_POST';
+export const DISLIKE_POST = 'DISLIKE_POST';
+
 const receivePost = post => {
   return {
     type: RECEIVE_POST,
@@ -59,5 +63,23 @@ export const createMediaPost = post => dispatch => {
   .createMediaPost(post)
   .then(post => {
     return dispatch(receivePost(post));
+  }));
+};
+
+export const likePost = like => dispatch => {
+  return (
+    LikeAPIUtil
+    .createLike(like)
+    .then(post => {
+      return dispatch(receivePost(post));
+  }));
+};
+
+export const dislikePost = id => dispatch => {
+  return (
+    LikeAPIUtil
+    .deleteLike(id)
+    .then(post => {
+      return dispatch(receivePost(post));
   }));
 };
