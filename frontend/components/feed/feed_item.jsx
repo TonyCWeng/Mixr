@@ -17,23 +17,23 @@ class FeedItem extends React.Component {
 
   toggleLike() {
     if (this.props.post.likes.includes(this.props.currentUser.id)) {
-      this.props.dislikePost(this.props.post.id);
+      this.props.dislikePost(this.props.post.post_id);
     } else {
-      this.props.likePost(this.props.post.id);
+      this.props.likePost(this.props.post.post_id);
     }
   }
 
   heart() {
     if (this.props.post.likes.includes(this.props.currentUser.id)) {
       return (
-        <div>
-          <button onClick={this.toggleLike}>UnLove</button>
+        <div className="heart-container">
+          <div onClick={this.toggleLike} className="heart red">❤</div>
         </div>
       );
     } else {
       return (
-        <div>
-          <button onClick={this.toggleLike}>Love</button>
+        <div className="heart-container">
+          <div onClick={this.toggleLike} className="heart">❤</div>
         </div>
       );
     }

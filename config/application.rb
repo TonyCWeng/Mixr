@@ -13,6 +13,8 @@ module Fullstack
     # -- all .rb files in that directory are automatically loaded.
     config.paperclip_defaults = {
       :storage => :s3,
+      url: ":s3_domain_url",
+      path: "/:class/:attachment/:id_partition/:style/:filename",
       :s3_credentials => {
         :bucket => ENV["s3_bucket"],
         :access_key_id => ENV["s3_access_key_id"],
@@ -20,6 +22,6 @@ module Fullstack
         :s3_region => ENV["s3_region"]
       }
     }
-
   end
+
 end

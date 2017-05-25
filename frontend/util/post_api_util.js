@@ -48,6 +48,6 @@ export const createLike = id => {
 export const deleteLike = id => {
   return $.ajax({
     method: 'DELETE',
-    url: `api/likes/${id}/like`
+    url: `api/posts/${id}/like`
   });
 };

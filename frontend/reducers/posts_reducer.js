@@ -13,6 +13,8 @@ const postsReducer = (state = {}, action) => {
   Object.freeze(state);
 
   const newState = merge({}, state);
+  const like = action.like;
+
   switch(action.type) {
     case RECEIVE_POST:
       const post = action.post;
@@ -25,7 +27,6 @@ const postsReducer = (state = {}, action) => {
       delete newState[action.post.id];
       return newState;
     case RECEIVE_LIKE:
-      const like = action.like;
       if (!state[like.post_id].likes.includes(like.user_id)) {
         newState[like.post_id].likes.push(like.user_id);
       }

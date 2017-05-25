@@ -18,8 +18,8 @@ const mapStateToProps = ({posts, session}) => ({
 const mapDispatchToProps = dispatch => ({
   requestAllPosts: () => dispatch(requestAllPosts()),
   deletePost: id => dispatch(deletePost(id)),
-  likePost: () => dispatch(likePost()),
-  dislikePost: () => dispatch(dislikePost())
+  likePost: (id) => dispatch(likePost(id)),
+  dislikePost: (id) => dispatch(dislikePost(id))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Feed);

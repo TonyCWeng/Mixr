@@ -70,6 +70,10 @@ export const receiveLike = like => ({
   like
 });
 
+export const removeLike = like => ({
+  type: REMOVE_LIKE,
+  like
+});
 
 export const likePost = id => dispatch => {
   return (
@@ -85,6 +89,6 @@ export const dislikePost = id => dispatch => {
     PostAPIUtil
     .deleteLike(id)
     .then(like => {
-      return dispatch(receiveLike(like));
+      return dispatch(removeLike(like));
   }));
 };
