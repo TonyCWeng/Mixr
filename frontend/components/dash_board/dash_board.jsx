@@ -16,6 +16,10 @@ class DashBoard extends React.Component {
           <PostBar currentUser={this.props.currentUser}/>
           <FeedContainer />
         </div>
+
+        <div className="right">
+
+        </div>
       </div>
     );
   }

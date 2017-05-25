@@ -34,6 +34,29 @@ class User < ApplicationRecord
 
   has_many :likes
 
+  has_many :followings,
+    class_name: :Follow,
+    primary_key: :id,
+    foreign_key: :followee_id
+
+  has_many :followed_users,
+    through: :followings,
+    source: :followee
+
+  has_many :followed_posts,
+    through: :followed_users,
+    source: :posts
+
+  has_many :follows,
+    class_name: :Follow,
+    primary_key: :id,
+    foreign_key: :follower_id
+
+  has_many :followers,
+    through: :follows,
+    source: :follower
+
+
   has_attached_file :avatar, default_url: "https://s3-us-west-1.amazonaws.com/mixr-dev/posts/images/000/000/027/original/avatar.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
   validates_attachment_size :avatar, in: 0..20.megabyte
