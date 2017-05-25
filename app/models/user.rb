@@ -37,7 +37,7 @@ class User < ApplicationRecord
   has_many :followings,
     class_name: :Follow,
     primary_key: :id,
-    foreign_key: :followee_id
+    foreign_key: :follower_id
 
   has_many :followed_users,
     through: :followings,
