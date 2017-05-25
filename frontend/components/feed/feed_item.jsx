@@ -76,6 +76,10 @@ class FeedItem extends React.Component {
           <div className="description-container">
             <p className="post-description">{this.props.post.body}</p>
           </div>
+
+          <div className="item-footer">
+            {this.heart()}
+          </div>
         </div>
       </div>
     );
@@ -94,6 +98,10 @@ class FeedItem extends React.Component {
 
           <div className="description-container">
             <p className="post-description">{this.props.post.body}</p>
+          </div>
+
+          <div className="item-footer">
+            {this.heart()}
           </div>
         </div>
       </div>
@@ -142,6 +150,10 @@ class FeedItem extends React.Component {
           <div className="description-container">
             <p className="post-description">{this.props.post.body}</p>
           </div>
+
+          <div className="item-footer">
+            {this.heart()}
+          </div>
         </div>
       </div>
     );
@@ -165,6 +177,10 @@ class FeedItem extends React.Component {
           <div className="description-container">
             <p className="post-description">{this.props.post.body}</p>
           </div>
+
+          <div className="item-footer">
+            {this.heart()}
+          </div>
         </div>
       </div>
     );
@@ -186,6 +202,10 @@ class FeedItem extends React.Component {
 
           <div className="description-container">
             <p className="post-description">{this.props.post.body}</p>
+          </div>
+
+          <div className="item-footer">
+            {this.heart()}
           </div>
         </div>
       </div>
