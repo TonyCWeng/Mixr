@@ -10,9 +10,10 @@ import DashBoardContainer from './dash_board/dash_board_container';
 const App = () => (
   <div>
     <Header />
+
     <ProtectedRoute path='/dashboard' component={DashBoardContainer} />
     <AuthRoute exact path='/' component={SplashPage} />
-
+  
   </div>
 );
 

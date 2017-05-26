@@ -1,4 +1,10 @@
 class Api::UsersController < ApplicationController
+
+  def index
+    @users = User.all.reject { |user| user.id == current_user.id }
+    render 'api/users/index'
+  end
+
   def create
     @user = User.new(user_params)
     if @user.save

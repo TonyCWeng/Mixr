@@ -50,7 +50,7 @@ class User < ApplicationRecord
   has_many :follows,
     class_name: :Follow,
     primary_key: :id,
-    foreign_key: :follower_id
+    foreign_key: :followee_id
 
   has_many :followers,
     through: :follows,

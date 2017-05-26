@@ -5,7 +5,6 @@ export const RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 export const RECEIVE_FOLLOW = 'RECEIVE_FOLLOW';
 export const REMOVE_FOLLOW = 'REMOVE_FOLLOW';
 
-
 const receiveCurrentUser = currentUser => {
   return {type: RECEIVE_CURRENT_USER,
     currentUser
@@ -57,6 +56,6 @@ export const unfollowUser = id => dispatch => {
     SessionAPIUtil
     .deleteFollow(id)
     .then(follow => {
-      return dispatch(receiveFollow(follow));
+      return dispatch(removeFollow(follow));
     }));
 };

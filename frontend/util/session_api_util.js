@@ -24,13 +24,20 @@ export const logout = () => {
 export const createFollow = id => {
   return $.ajax({
     method: 'POST',
-    url: `api/posts/${id}/like`
+    url: `api/users/${id}/follow`
   });
 };
 
 export const deleteFollow = id => {
   return $.ajax({
     method: 'DELETE',
-    url: `api/posts/${id}/like`
+    url: `api/users/${id}/follow`
+  });
+};
+
+export const getUsers = users => {
+  return $.ajax({
+    method: 'GET',
+    url: `api/users`
   });
 };

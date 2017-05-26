@@ -1,7 +1,7 @@
 import React from 'react';
 import FeedContainer from '../feed/feed_container';
 import PostBar from '../post_forms/post_bar';
-
+import UserIndexContainer from '../user_index/user_index_container';
 
 
 class DashBoard extends React.Component {
@@ -18,7 +18,7 @@ class DashBoard extends React.Component {
         </div>
 
         <div className="right">
-
+          <UserIndexContainer />
         </div>
       </div>
     );
