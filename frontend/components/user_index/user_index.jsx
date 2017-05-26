@@ -19,7 +19,7 @@ class UserIndex extends React.Component {
     } else {
       return(
         <div className="user-feed">
-          <span className="recommendation">Recommended Blogs</span>
+          <span className="recommendation">Filter User's Posts</span>
           {this.props.users.map((user, i) => (
             <UserDetail user={user}
               key={`user-detail-${i}`}

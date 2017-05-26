@@ -14,8 +14,8 @@ class Feed extends React.Component {
   }
 
   componentWillReceiveProps(nextProps){
-    if (this.state.followings !== this.props.currentUser.followings){
-      this.setState(this.props.currentUser.followings);
+    debugger
+    if (nextProps.currentUser.followings !== this.props.currentUser.followings){
       this.props.requestAllPosts();
     }
 

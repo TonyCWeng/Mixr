@@ -28,7 +28,7 @@ class UserDetail extends React.Component {
       return (
         <div className="follow-container">
           <div onClick={this.toggleFollow} className="not-following">
-            <img className="follow-status" src={"https://s3-us-west-1.amazonaws.com/mixr-dev/photos/add+follow.png"} />
+            <img className="follow-status hover-follow" src={"https://s3-us-west-1.amazonaws.com/mixr-dev/photos/add+follow.png"} />
           </div>
         </div>
       );
