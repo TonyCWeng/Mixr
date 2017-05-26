@@ -18,28 +18,13 @@ class TextForm extends React.Component {
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.previewFile = this.previewFile.bind(this);
+    this.handleMedia = this.handleMedia.bind(this);
   }
 
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
-  }
-
-  previewFile() {
-    var preview = document.querySelector('img');
-    var file    = document.querySelector('input[type=file]').files[0];
-    var reader  = new FileReader();
-
-    reader.addEventListener("load", () => {
-      preview.src = reader.result;
-      this.setState({ source: preview.src, image: file });
-    }, false);
-
-    if (file) {
-      reader.readAsDataURL(file);
-    }
   }
 
   handleOpenModal () {
@@ -54,6 +39,17 @@ class TextForm extends React.Component {
       source: '',
       image: ''
     });
+  }
+
+  handleMedia(e) {
+    let reader = new FileReader();
+    let file = e.currentTarget.files[0];
+    reader.onloadend = function() {
+      this.setState({ source: reader.result, image: file});
+    }.bind(this);
+    if (file) {
+      reader.readAsDataURL(file);
+    }
   }
 
   handleSubmit () {
@@ -97,10 +93,9 @@ class TextForm extends React.Component {
               <input className="media-input"
                 type="file"
                 accept="image/*"
-                onChange={this.previewFile}
+                onChange={this.handleMedia}
               />
             </div>
-            <img className="preview" src={this.state.source} />
 
             <div className="post-field">
               <textarea className="post-input"

@@ -1,5 +1,5 @@
 # Proposal
-[Mixr Live][tbd]
+[Mixr Live](http://mixr-app.herokuapp.com/)
 
 ## Minimum Viable Product
 Mixr is a web application along the lines of Tumblr, built on React/Redux and Rails. Users will be able to create an assortment of blog posts.

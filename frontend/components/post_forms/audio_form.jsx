@@ -18,29 +18,13 @@ class AudioForm extends React.Component {
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.previewFile = this.previewFile.bind(this);
+    this.handleMedia = this.handleMedia.bind(this);
   }
 
   update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
-  }
-
-  previewFile() {
-    var preview = document.querySelector('audio');
-    var file    = document.querySelector('input[type=file]').files[0];
-    var reader  = new FileReader();
-
-    reader.addEventListener("load", () => {
-      preview.src = reader.result;
-      this.setState({ source: preview.src, image: file });
-    }, false);
-
-    if (file) {
-      reader.readAsDataURL(file);
-    }
-
   }
 
   handleOpenModal () {
@@ -56,6 +40,17 @@ class AudioForm extends React.Component {
       post_type: '',
       image: ''
     });
+  }
+
+  handleMedia(e) {
+    let reader = new FileReader();
+    let file = e.currentTarget.files[0];
+    reader.onloadend = function() {
+      this.setState({ source: reader.result, image: file});
+    }.bind(this);
+    if (file) {
+      reader.readAsDataURL(file);
+    }
   }
 
   handleSubmit () {
@@ -99,14 +94,9 @@ class AudioForm extends React.Component {
               <input className="media-input"
                 type="file"
                 accept="audio/*"
-                onChange={this.previewFile}
+                onChange={this.handleMedia}
               />
             </div>
-            <audio controls>
-                <source src={this.state.source} type="audio/mp3"></source>
-                <source src={this.state.source} type="audio/ogg"></source>
-                <source src={this.state.source} type="audio/wav"></source>
-            </audio>
 
             <div className="post-field">
               <textarea className="post-input"

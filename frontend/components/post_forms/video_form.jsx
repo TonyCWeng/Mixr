@@ -18,7 +18,7 @@ class VideoForm extends React.Component {
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.previewFile = this.previewFile.bind(this);
+    this.handleMedia = this.handleMedia.bind(this);
   }
 
   update(field) {
@@ -27,16 +27,12 @@ class VideoForm extends React.Component {
     });
   }
 
-  previewFile() {
-    var preview = document.querySelector('video');
-    var file    = document.querySelector('input[type=file]').files[0];
-    var reader  = new FileReader();
-
-    reader.addEventListener("load", () => {
-      preview.src = reader.result;
-      this.setState({ source: preview.src, image: file });
-    }, false);
-
+  handleMedia(e) {
+    let reader = new FileReader();
+    let file = e.currentTarget.files[0];
+    reader.onloadend = function() {
+      this.setState({ source: reader.result, image: file});
+    }.bind(this);
     if (file) {
       reader.readAsDataURL(file);
     }
@@ -97,14 +93,9 @@ class VideoForm extends React.Component {
               <input className="media-input"
                 type="file"
                 accept="video/*"
-                onChange={this.previewFile}
+                onChange={this.handleMedia}
               />
             </div>
-
-            <video width="200" height="200" controls>
-                <source src={this.state.source} type="video/mp4" />
-                <source src={this.state.source} type="video/ogg" />
-            </video>
 
             <div className="post-field">
               <textarea className="post-input"
