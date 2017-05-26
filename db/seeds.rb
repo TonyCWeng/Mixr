@@ -13,12 +13,12 @@ user2 = User.create(username: "Tony", password: 'password', email: 'tony@gmail.c
 user3 = User.create(username: "Gamer24", password: 'password', email: 'jack@gmail.com', avatar:"https://s3-us-west-1.amazonaws.com/mixr-dev/gamer24.png")
 user4 = User.create(username: "Amanda", password: 'password', email: 'eeyore@gmail.com', avatar:"https://s3-us-west-1.amazonaws.com/mixr-dev/kitty.png")
 user5 = User.create(username: "CandyTea", password: 'password', email: 'candy@gmail.com', avatar: "https://s3-us-west-1.amazonaws.com/mixr-dev/candycorn.jpg")
-user6 = User.create(username: "Smiles", password: 'password', email: 'smiles1120@gmail.com', avatar:"https://s3-us-west-1.amazonaws.com/mixr-dev/icon2.jpg")
-user7 = User.create(username: "Anon", password: 'password', email: 'reaper0@gmail.com', avatar:"")
+user6 = User.create(username: "Mithra", password: 'password', email: 'mithra@gmail.com', avatar:"https://s3-us-west-1.amazonaws.com/mixr-dev/photos/icon7.jpg")
+user7 = User.create(username: "Anon", password: 'password', email: 'reaper0@gmail.com', avatar:"https://s3-us-west-1.amazonaws.com/mixr-dev/icon2.jpg")
 user8 = User.create(username: "Lunafreya", password: 'password', email: 'luna@gmail.com', avatar:"https://s3-us-west-1.amazonaws.com/mixr-dev/icon3.jpg")
 
 
-Post.create(author_id: user1.id, source:"https://s3-us-west-1.amazonaws.com/mixr-dev/posts/images/000/000/003/original/autumn.jpg", body:"I ", post_type:"photo")
+Post.create(author_id: user1.id, source:"https://s3-us-west-1.amazonaws.com/mixr-dev/photos/texas.jpg", body:"Westcave Preserve, Texas. The 30 mile drive was worth it!", post_type:"photo")
 Post.create(author_id: user6.id, source:"https://s3-us-west-1.amazonaws.com/mixr-dev/photos/city.gif", post_type:"photo")
 Post.create(author_id: user8.id, source:"https://s3-us-west-1.amazonaws.com/mixr-dev/leaves.gif", body:"Autumn in Japan", post_type:"photo")
 Post.create(author_id: user5.id, source:"https://s3-us-west-1.amazonaws.com/mixr-dev/Macarons.jpg", body:"Picked these up over the weekend. Sooooo good.", post_type:"photo")
