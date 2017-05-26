@@ -19,18 +19,19 @@ user8 = User.create(username: "Lunafreya", password: 'password', email: 'luna@gm
 
 
 Post.create(author_id: user1.id, source:"https://s3-us-west-1.amazonaws.com/mixr-dev/photos/texas.jpg", body:"Westcave Preserve, Texas. The 30 mile drive was worth it!", post_type:"photo")
-Post.create(author_id: user6.id, source:"https://s3-us-west-1.amazonaws.com/mixr-dev/photos/city.gif", post_type:"photo")
-Post.create(author_id: user8.id, source:"https://s3-us-west-1.amazonaws.com/mixr-dev/leaves.gif", body:"Autumn in Japan", post_type:"photo")
-Post.create(author_id: user5.id, source:"https://s3-us-west-1.amazonaws.com/mixr-dev/Macarons.jpg", body:"Picked these up over the weekend. Sooooo good.", post_type:"photo")
-Post.create(author_id: user2.id, title: "http://en.akinator.com/", body:"Spent so many hours on this site, back in the day.", post_type: "link")
 Post.create(author_id: user4.id, source:"https://s3-us-west-1.amazonaws.com/mixr-dev/14+Sun+Skip.mp3", body:"Can't wait for her concert in August!", post_type:"audio")
-Post.create(author_id: user3.id, source:"https://s3-us-west-1.amazonaws.com/mixr-dev/Footsteps+in+the+Snow+-+FFXIV.mp3", body:"Best track from the FFXIV OST, at least pre-Heavensward!", post_type:"audio")
-Post.create(author_id: user7.id, source:"https://s3-us-west-1.amazonaws.com/mixr-dev/videos/night+gif.mp4", body:"Something about this is so appealing to me right now.", post_type:"video")
+Post.create(author_id: user8.id, source:"https://s3-us-west-1.amazonaws.com/mixr-dev/leaves.gif", body:"Autumn in Japan", post_type:"photo")
 Post.create(author_id: user5.id, source:"https://s3-us-west-1.amazonaws.com/mixr-dev/cake.jpg", body:"First attempt at a mirror glaze! How'd I do?", post_type:"photo")
 Post.create(author_id: user4.id, source:"https://s3-us-west-1.amazonaws.com/mixr-dev/photos/waterfall+resize.gif", post_type:"photo")
+Post.create(author_id: user2.id, source:"https://s3-us-west-1.amazonaws.com/mixr-dev/Macarons.jpg", body:"Picked these up over the weekend. Sooooo good.", post_type:"photo")
+Post.create(author_id: user7.id, source:"https://s3-us-west-1.amazonaws.com/mixr-dev/videos/night+gif.mp4", body:"Something about this is so appealing to me right now.", post_type:"video")
+Post.create(author_id: user2.id, title: "http://en.akinator.com/", body:"Spent so many hours on this site, back in the day.", post_type: "link")
+Post.create(author_id: user3.id, source:"https://s3-us-west-1.amazonaws.com/mixr-dev/Footsteps+in+the+Snow+-+FFXIV.mp3", body:"Best track from the FFXIV OST, at least pre-Heavensward!", post_type:"audio")
+Post.create(author_id: user6.id, source:"https://s3-us-west-1.amazonaws.com/mixr-dev/photos/city.gif", post_type:"photo")
 Post.create(author_id: user2.id, title: "https://s3-us-west-1.amazonaws.com/mixr-dev/photos/bonfire+gif.gif", post_type:"photo")
 
 
 
 Follow.create(followee_id: user8.id, follower_id: user1.id)
-Follow.create(followee_id: user6.id, follower_id: user1.id)
+Follow.create(followee_id: user4.id, follower_id: user1.id)
+Follow.create(followee_id: user5.id, follower_id: user1.id)
