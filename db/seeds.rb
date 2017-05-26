@@ -28,7 +28,7 @@ Post.create(author_id: user7.id, source:"https://s3-us-west-1.amazonaws.com/mixr
 Post.create(author_id: user2.id, title: "http://en.akinator.com/", body:"Spent so many hours on this site, back in the day.", post_type: "link")
 Post.create(author_id: user3.id, source:"https://s3-us-west-1.amazonaws.com/mixr-dev/Footsteps+in+the+Snow+-+FFXIV.mp3", body:"Best track from the FFXIV OST, at least pre-Heavensward!", post_type:"audio")
 Post.create(author_id: user6.id, source:"https://s3-us-west-1.amazonaws.com/mixr-dev/photos/city.gif", post_type:"photo")
-Post.create(author_id: user2.id, title: "https://s3-us-west-1.amazonaws.com/mixr-dev/photos/bonfire+gif.gif", post_type:"photo")
+Post.create(author_id: user2.id, title: "https://s3-us-west-1.amazonaws.com/mixr-dev/photos/poison.gif", body:"Pick your poison.", post_type:"photo")
 
 
 
