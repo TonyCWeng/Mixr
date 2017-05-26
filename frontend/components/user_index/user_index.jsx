@@ -18,21 +18,18 @@ class UserIndex extends React.Component {
       return null;
     } else {
       return(
-        <ul className="user-feed">
+        <div className="user-feed">
+          <span className="recommendation">Recommended Blogs</span>
           {this.props.users.map((user, i) => (
-            <div key={`user-${i}`} className="user-container">
-              <img className="mini-avatar" src={user.avatar} />
-              <li key={`post-${i}`} className="user-detail">
-                <UserDetail user={user}
-                  currentUser={this.props.currentUser}
-                  unfollowUser={this.props.unfollowUser}
-                  followUser={this.props.followUser}
-                  currentUser={this.props.currentUser}
-                />
-            </li>
-            </div>
+            <UserDetail user={user}
+              key={`user-detail-${i}`}
+              currentUser={this.props.currentUser}
+              unfollowUser={this.props.unfollowUser}
+              followUser={this.props.followUser}
+              currentUser={this.props.currentUser}
+            />
           ))}
-        </ul>
+        </div>
       );
     }
   }

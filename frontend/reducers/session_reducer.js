@@ -17,7 +17,6 @@ const sessionReducer = (state = _nullUser, action) => {
 
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
-      // const currentUser = action.currentUser;
       return { currentUser: action.currentUser };
     case RECEIVE_FOLLOW:
       if (!state.currentUser.followings.includes(follow.followee_id)) {

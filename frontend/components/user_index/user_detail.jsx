@@ -33,8 +33,11 @@ class UserDetail extends React.Component {
 
   render() {
     return (
-      <div className="detail-container">
-        <div className="detail-username">{this.props.user.username}</div>
+      <div className="user-feed-item">
+        <div className="detail-container">
+          <img className="mini-avatar" src={this.props.user.avatar} />
+          <div className="detail-username">{this.props.user.username}</div>
+        </div>
         <div className="follow-icon">
           {this.followButton()}
         </div>

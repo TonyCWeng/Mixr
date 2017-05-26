@@ -12,13 +12,16 @@ class DashBoard extends React.Component {
   render() {
     return (
       <div className="dashboard-container">
-        <div className="left">
-          <PostBar currentUser={this.props.currentUser}/>
-          <FeedContainer />
-        </div>
+        <div className="main-content">
+          <div className="left">
+            <PostBar currentUser={this.props.currentUser}/>
+            <FeedContainer />
+          </div>
 
-        <div className="right">
-          <UserIndexContainer />
+          <div className="right">
+            <UserIndexContainer />
+          </div>
+
         </div>
       </div>
     );
