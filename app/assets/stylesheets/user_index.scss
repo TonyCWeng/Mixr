@@ -7,13 +7,15 @@
 .right {
   display: flex;
   flex-direction: column;
+  padding-left: 20px;
+  min-width: 300px;
 }
 
 .user-feed {
   display: flex;
   flex-direction: column;
-  padding: 0px 8px 0 57px;
-  width: 160%;
+  padding: 0px 8px 0 0px;
+  width: 100%;
 }
 
 .detail-container {

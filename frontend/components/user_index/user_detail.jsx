@@ -19,13 +19,17 @@ class UserDetail extends React.Component {
     if ( this.props.currentUser && this.props.currentUser.followings.includes(this.props.user.id)) {
       return (
         <div className="follow-container">
-          <div onClick={this.toggleFollow} className="following">❤</div>
+          <div onClick={this.toggleFollow} className="following">
+            <img className="follow-status" src={"https://s3-us-west-1.amazonaws.com/mixr-dev/1495795568_099338-netvibes2-logo-square.png"} />
+          </div>
         </div>
       );
     } else {
       return (
         <div className="follow-container">
-          <div onClick={this.toggleFollow} className="not-following">❤</div>
+          <div onClick={this.toggleFollow} className="not-following">
+            <img className="follow-status" src={"https://s3-us-west-1.amazonaws.com/mixr-dev/add-follow.png"} />
+          </div>
         </div>
       );
     }
@@ -38,7 +42,7 @@ class UserDetail extends React.Component {
           <img className="mini-avatar" src={this.props.user.avatar} />
           <div className="detail-username">{this.props.user.username}</div>
         </div>
-        <div className="follow-icon">
+        <div className="follow-icon-container">
           {this.followButton()}
         </div>
       </div>
