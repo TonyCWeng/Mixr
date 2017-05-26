@@ -42,7 +42,14 @@ Mixr was built with the following technologies:
 - Babel
 
 ### Storage
+
 - Amazon Web Services
+
+## Future Implementations
+
+- User profiles
+- Feed filtering based on content
+- Tumblr-esque ask posts
 
 [mixr]: http://mixr-app.herokuapp.com/
 [splash page]: ./docs/images/splash.png
