@@ -36,12 +36,19 @@
 }
 
 .follow-status {
+  border-radius: 5px;
   height: 24px;
   width: 24px;
+  cursor: pointer;
 }
 
 .follow-icon-container {
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+.follow-status:hover {
+  background: #fff;
+  content: url("https://s3-us-west-1.amazonaws.com/mixr-dev/photos/hover+add.png");
 }

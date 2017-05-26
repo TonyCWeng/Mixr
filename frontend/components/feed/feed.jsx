@@ -4,7 +4,9 @@ import FeedItem from './feed_item';
 class Feed extends React.Component {
   constructor(props) {
     super(props);
-
+    this.state = {
+      followings: props.currentUser.followings
+    };
   }
 
   componentDidMount() {
@@ -12,9 +14,11 @@ class Feed extends React.Component {
   }
 
   componentWillReceiveProps(nextProps){
-    if (this.props.posts.length !== nextProps.posts.length){
+    if (this.state.followings !== this.props.currentUser.followings){
+      this.setState(this.props.currentUser.followings);
       this.props.requestAllPosts();
     }
+
   }
 
   render() {

@@ -2,7 +2,7 @@ class Api::PostsController < ApplicationController
 
   def index
     # @posts = current_user.posts.all
-    @posts = Post.all
+    @posts = current_user.followed_posts + current_user.posts
   end
 
   def show
