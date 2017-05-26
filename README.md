@@ -54,5 +54,5 @@ Mixr was built with the following technologies:
 [mixr]: http://mixr-app.herokuapp.com/
 [splash page]: ./docs/images/splash.png
 [sample content]: ./docs/images/sample.png
-[proposal]: ./docs/proposal.md
+[proposal]: ./docs/README.md
 [schema]: ./docs/schema.md
