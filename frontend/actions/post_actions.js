@@ -24,7 +24,7 @@ const receiveAllPosts = posts => {
 
 const removePost = post => {
   return {
-      type: 'DELETE_POST',
+      type: REMOVE_POST,
       post
   };
 };
