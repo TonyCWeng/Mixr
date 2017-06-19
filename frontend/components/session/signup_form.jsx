@@ -49,6 +49,7 @@ class SignupForm extends React.Component {
       <div>
 
         <div className="session-form">
+          <div className="session-title">Sign Up</div>
           {this.renderErrors()}
           <div className="form-item">
 
