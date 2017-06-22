@@ -25,6 +25,10 @@
   cursor: pointer;
 }
 
+.left-text:hover {
+  color: #ADD8E6;
+}
+
 .header-right {
   flex: 1;
   padding-right: 20px 5px;
@@ -48,4 +52,8 @@
    font-weight: 600;
    width: 75px;
    height: 32px;
+}
+
+.btn:hover:enabled {
+  opacity: .8;
 }
