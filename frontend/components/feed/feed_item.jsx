@@ -13,6 +13,7 @@ class FeedItem extends React.Component {
     this.video = this.video.bind(this);
 
     this.toggleLike = this.toggleLike.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   toggleLike() {
@@ -21,6 +22,10 @@ class FeedItem extends React.Component {
     } else {
       this.props.likePost(this.props.post.post_id);
     }
+  }
+
+  handleDelete() {
+    this.props.deletePost(this.props.post.post_id);
   }
 
   heart() {
@@ -34,6 +39,16 @@ class FeedItem extends React.Component {
       return (
         <div className="heart-container">
           <div onClick={this.toggleLike} className="heart">❤</div>
+        </div>
+      );
+    }
+  }
+
+  delete() {
+    if (this.props.post.author_id === this.props.currentUser.id) {
+      return (
+        <div className="delete-container">
+          <div onClick={this.handleDelete} className="nix">X</div>
         </div>
       );
     }
@@ -55,6 +70,7 @@ class FeedItem extends React.Component {
           </div>
 
           <div className="item-footer">
+            {this.delete()}
             {this.heart()}
           </div>
         </div>
@@ -78,6 +94,7 @@ class FeedItem extends React.Component {
           </div>
 
           <div className="item-footer">
+            {this.delete()}
             {this.heart()}
           </div>
         </div>
@@ -101,6 +118,7 @@ class FeedItem extends React.Component {
           </div>
 
           <div className="item-footer">
+            {this.delete()}
             {this.heart()}
           </div>
         </div>
@@ -128,6 +146,7 @@ class FeedItem extends React.Component {
           </div>
 
           <div className="item-footer">
+            {this.delete()}
             {this.heart()}
           </div>
 
@@ -152,6 +171,7 @@ class FeedItem extends React.Component {
           </div>
 
           <div className="item-footer">
+            {this.delete()}
             {this.heart()}
           </div>
         </div>
@@ -179,6 +199,7 @@ class FeedItem extends React.Component {
           </div>
 
           <div className="item-footer">
+            {this.delete()}
             {this.heart()}
           </div>
         </div>
@@ -205,6 +226,7 @@ class FeedItem extends React.Component {
           </div>
 
           <div className="item-footer">
+            {this.delete()}
             {this.heart()}
           </div>
         </div>

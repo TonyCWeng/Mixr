@@ -12,3 +12,19 @@
 .red{
   color: #FF0000
 }
+
+.delete-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 10px;
+}
+
+.nix {
+  cursor: pointer;
+}
+
+.item-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}

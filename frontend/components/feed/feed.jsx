@@ -16,8 +16,9 @@ class Feed extends React.Component {
   componentWillReceiveProps(nextProps){
     if (nextProps.currentUser.followings !== this.props.currentUser.followings){
       this.props.requestAllPosts();
+    } else if (nextProps.posts.length !== this.props.posts.length) {
+      this.props.requestAllPosts();
     }
-
   }
 
   render() {
@@ -34,6 +35,7 @@ class Feed extends React.Component {
                 likePost={this.props.likePost}
                 dislikePost={this.props.dislikePost}
                 currentUser={this.props.currentUser}
+                deletePost={this.props.deletePost}
               />
             </li>
         </div>
