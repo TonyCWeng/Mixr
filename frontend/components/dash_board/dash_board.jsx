@@ -20,10 +20,25 @@ class DashBoard extends React.Component {
 
           <div className="right">
             <UserIndexContainer />
+
+              <div className="links">
+                <div>
+                  <a href="https://github.com/tonycweng/Mixr/">
+                    <i className="fa fa-github" aria-hidden="true"></i>
+                  </a>
+                </div>
+
+                <div>
+                  <a href="https://www.linkedin.com/in/tony-weng">
+                    <i className="fa fa-linkedin-square" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+
+            </div>
           </div>
 
         </div>
-      </div>
     );
   }
 }
