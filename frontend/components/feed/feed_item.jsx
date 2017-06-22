@@ -29,18 +29,20 @@ class FeedItem extends React.Component {
   }
 
   heart() {
-    if (this.props.post.likes.includes(this.props.currentUser.id)) {
-      return (
-        <div className="heart-container">
-          <div onClick={this.toggleLike} className="heart red">❤</div>
-        </div>
-      );
-    } else {
-      return (
-        <div className="heart-container">
-          <div onClick={this.toggleLike} className="heart">❤</div>
-        </div>
-      );
+    if (this.props.post.author_id !== this.props.currentUser.id) {
+      if (this.props.post.likes.includes(this.props.currentUser.id)) {
+        return (
+          <div className="heart-container">
+            <div onClick={this.toggleLike} className="heart red">❤</div>
+          </div>
+        );
+      } else {
+        return (
+          <div className="heart-container">
+            <div onClick={this.toggleLike} className="heart">❤</div>
+          </div>
+        );
+      }
     }
   }
 

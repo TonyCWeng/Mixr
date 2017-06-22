@@ -11,8 +11,9 @@
 - Seven different post types enables users to easily express themselves.
 - Post feed consisting of one's own posts alongside followed users' content.
 - Following and unfollowing other users.
-  - The post feed refreshes in accordance to followed / unfollowed users, allow users to directly
+  - The post feed refreshes in accordance to followed / unfollowed users, allowing users to personalize their content feed.
 - Liking and unliking posts.
+- Deleting posts.
 
 ![sample content][sample content]
 
