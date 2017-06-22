@@ -69,3 +69,17 @@
 .video-content {
 
 }
+
+.fa-fa {
+  font-size: 30px;
+  height: 100%;
+  width: 100%;
+}
+
+.nixer {
+  background-image: url('https://console.aws.amazon.com/s3/object/mixr-dev/photos/deleter.png?region=us-east-2&tab=overview');
+}
+
+.nixer:hover {
+  background-image: url('https://s3-us-west-1.amazonaws.com/mixr-dev/greyed+deleter.png');
+}

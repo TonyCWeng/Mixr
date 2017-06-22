@@ -48,7 +48,9 @@ class FeedItem extends React.Component {
     if (this.props.post.author_id === this.props.currentUser.id) {
       return (
         <div className="delete-container">
-          <div onClick={this.handleDelete} className="nix">X</div>
+          <div onClick={this.handleDelete} className="nix">
+            <img className="nixer" src={'https://s3-us-west-1.amazonaws.com/mixr-dev/greyed+deleter.png'} />
+          </div>
         </div>
       );
     }

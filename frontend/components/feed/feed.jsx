@@ -5,7 +5,8 @@ class Feed extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      followings: props.currentUser.followings
+      followings: props.currentUser.followings,
+      posts: props.posts
     };
   }
 
@@ -16,7 +17,7 @@ class Feed extends React.Component {
   componentWillReceiveProps(nextProps){
     if (nextProps.currentUser.followings !== this.props.currentUser.followings){
       this.props.requestAllPosts();
-    } else if (nextProps.posts.length !== this.props.posts.length) {
+    } else if (nextProps.posts !== this.props.posts) {
       this.props.requestAllPosts();
     }
   }
