@@ -1,14 +1,36 @@
 .header {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  border-bottom: 1px solid white;
-  padding-right: 20px 5px;
-  height: 54px;
   background-color: #36465D;
   width: 100%;
   z-index: 1000;
   position: fixed;
+  border-bottom: 1px solid white;
+  height: 54px;
+}
+.header-left {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  color: white;
+  padding-left: 22px;
+}
+
+.header-text {
+  color: white;
+  font-size: 24;
+}
+
+.left-text {
+  cursor: pointer;
+}
+
+.header-right {
+  flex: 1;
+  padding-right: 20px 5px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .header-item {
