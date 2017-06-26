@@ -8,10 +8,55 @@
 ## Features
 
 - User accounts with secure frontend and backend authentication.
-- Seven different post types enables users to easily express themselves.
+- Option to attach media files to posts
+```Javascript
+  handleMedia(e) {
+    let reader = new FileReader();
+    let file = e.currentTarget.files[0];
+    reader.onloadend = function() {
+      this.setState({ source: reader.result, image: file});
+    }.bind(this);
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  }
+
+  handleSubmit () {
+    let formData = new FormData();
+    formData.append('post[source]', this.state.source);
+    formData.append('post[body]', this.state.body);
+    formData.append('post[post_type]', 'photo');
+    formData.append('post[image]', this.state.image);
+    this.props.createMediaPost(formData)
+              .then(this.handleCloseModal());
+  }
+```
 - Post feed consisting of one's own posts alongside followed users' content.
 - Following and unfollowing other users.
   - The post feed refreshes in accordance to followed / unfollowed users, allowing users to personalize their content feed.
+
+```Javascript
+class Feed extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      followings: props.currentUser.followings,
+      posts: props.posts
+    };
+  }
+
+  componentDidMount() {
+    this.props.requestAllPosts();
+  }
+
+  componentWillReceiveProps(nextProps){
+    if (this.props.currentUser) {
+      if (nextProps.currentUser.followings !== this.props.currentUser.followings){
+        this.props.requestAllPosts();
+      }
+    }
+  }
+```
 - Liking and unliking posts.
 - Deleting posts.
 
