@@ -46,6 +46,14 @@ class FeedItem extends React.Component {
     }
   }
 
+  counter() {
+    return (
+      <div className="like-counter">
+        Likes: {this.props.post.likes.length}
+      </div>
+    );
+  }
+
   delete() {
     if (this.props.post.author_id === this.props.currentUser.id) {
       return (
@@ -73,9 +81,12 @@ class FeedItem extends React.Component {
             <p className="post-description">{this.props.post.body}</p>
           </div>
 
-          <div className="item-footer">
-            {this.delete()}
-            {this.heart()}
+          <div className="item-footer-container">
+            {this.counter()}
+            <div className="item-footer">
+              {this.delete()}
+              {this.heart()}
+            </div>
           </div>
         </div>
       </div>
@@ -97,9 +108,12 @@ class FeedItem extends React.Component {
             <p className="post-description">{this.props.post.body}</p>
           </div>
 
-          <div className="item-footer">
-            {this.delete()}
-            {this.heart()}
+          <div className="item-footer-container">
+            {this.counter()}
+            <div className="item-footer">
+              {this.delete()}
+              {this.heart()}
+            </div>
           </div>
         </div>
       </div>
@@ -121,9 +135,12 @@ class FeedItem extends React.Component {
             <p className="post-description">{this.props.post.body}</p>
           </div>
 
-          <div className="item-footer">
-            {this.delete()}
-            {this.heart()}
+          <div className="item-footer-container">
+            {this.counter()}
+            <div className="item-footer">
+              {this.delete()}
+              {this.heart()}
+            </div>
           </div>
         </div>
       </div>
@@ -149,9 +166,12 @@ class FeedItem extends React.Component {
             <p className="post-description">{this.props.post.body}</p>
           </div>
 
-          <div className="item-footer">
-            {this.delete()}
-            {this.heart()}
+          <div className="item-footer-container">
+            {this.counter()}
+            <div className="item-footer">
+              {this.delete()}
+              {this.heart()}
+            </div>
           </div>
 
         </div>
@@ -174,10 +194,14 @@ class FeedItem extends React.Component {
             <p className="post-description">{this.props.post.body}</p>
           </div>
 
-          <div className="item-footer">
-            {this.delete()}
-            {this.heart()}
+          <div className="item-footer-container">
+            {this.counter()}
+            <div className="item-footer">
+              {this.delete()}
+              {this.heart()}
+            </div>
           </div>
+
         </div>
       </div>
     );
@@ -202,10 +226,14 @@ class FeedItem extends React.Component {
             <p className="post-description">{this.props.post.body}</p>
           </div>
 
-          <div className="item-footer">
-            {this.delete()}
-            {this.heart()}
+          <div className="item-footer-container">
+            {this.counter()}
+            <div className="item-footer">
+              {this.delete()}
+              {this.heart()}
+            </div>
           </div>
+
         </div>
       </div>
     );
@@ -229,10 +257,14 @@ class FeedItem extends React.Component {
             <p className="post-description">{this.props.post.body}</p>
           </div>
 
-          <div className="item-footer">
-            {this.delete()}
-            {this.heart()}
+          <div className="item-footer-container">
+            {this.counter()}
+            <div className="item-footer">
+              {this.delete()}
+              {this.heart()}
+            </div>
           </div>
+
         </div>
       </div>
     );

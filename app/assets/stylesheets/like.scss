@@ -40,3 +40,13 @@
 .red:hover {
   opacity: .5;
 }
+
+.item-footer-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.like-counter {
+  align-self: center;
+  font-size: 16;
+}
