@@ -65,6 +65,14 @@ export const createMediaPost = post => dispatch => {
   }));
 };
 
+export const updatePost = post => dispatch => {
+  PostAPIUtil
+  .updatePost(post)
+  .then(post => {
+    return dispatch(receivePost(post));
+  });
+};
+
 export const receiveLike = like => ({
   type: RECEIVE_LIKE,
   like

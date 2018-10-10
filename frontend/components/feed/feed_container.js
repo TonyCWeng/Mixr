@@ -4,6 +4,7 @@ import { selectAllPosts } from '../../reducers/selectors';
 import {
   requestSinglePost,
   requestAllPosts,
+  updatePost,
   deletePost,
   likePost,
   dislikePost
@@ -17,6 +18,7 @@ const mapStateToProps = ({posts, session}) => ({
 
 const mapDispatchToProps = dispatch => ({
   requestAllPosts: () => dispatch(requestAllPosts()),
+  updatePost: post => dispatch(updatePost(post)),
   deletePost: id => dispatch(deletePost(id)),
   likePost: (id) => dispatch(likePost(id)),
   dislikePost: (id) => dispatch(dislikePost(id))

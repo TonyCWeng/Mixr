@@ -16,7 +16,7 @@ user5 = User.create(username: "CandyTea", password: 'password', email: 'candy@gm
 user6 = User.create(username: "Mithra", password: 'password', email: 'mithra@gmail.com', avatar:"https://s3-us-west-1.amazonaws.com/mixr-dev/photos/icon7.jpg")
 user7 = User.create(username: "Anon", password: 'password', email: 'reaper0@gmail.com', avatar:"https://s3-us-west-1.amazonaws.com/mixr-dev/icon2.jpg")
 user8 = User.create(username: "Lunafreya", password: 'password', email: 'luna@gmail.com', avatar:"https://s3-us-west-1.amazonaws.com/mixr-dev/icon3.jpg")
-user8 = User.create(username: "Noctis", password: 'password', email: 'lucis@gmail.com', avatar:"")
+user9 = User.create(username: "Noctis", password: 'password', email: 'lucis@gmail.com', avatar:"")
 
 
 Post.create(author_id: user2.id, title:"http://en.akinator.com/", body:"Spent so many hours on this site, back in the day.", post_type: "link")

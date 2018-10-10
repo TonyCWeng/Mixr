@@ -24,6 +24,10 @@ class FeedItem extends React.Component {
     }
   }
 
+  openEditForm() {
+    this.props.updatePost
+  }
+
   handleDelete() {
     this.props.deletePost(this.props.post.post_id);
   }
@@ -52,6 +56,18 @@ class FeedItem extends React.Component {
         Likes: {this.props.post.likes.length}
       </div>
     );
+  }
+
+  edit() {
+    if (this.props.post.author_id === this.props.currentUser.id) {
+      return (
+        <div className="edit-container">
+          <div onClick={this.openEditForm} className="editor">
+            EDIT
+          </div>
+        </div>
+      );
+    }
   }
 
   delete() {

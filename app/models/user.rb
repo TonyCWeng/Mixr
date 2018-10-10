@@ -24,46 +24,47 @@ class User < ApplicationRecord
   validates :username, :email, :password_digest, :session_token, presence: true
   validates :username, :email, uniqueness: true
   after_initialize :ensure_session_token
+  after_initialize :add_default_avatar
   before_validation :ensure_session_token_uniqueness
   attr_reader :password
 
   has_many :posts,
-    class_name: :Post,
-    primary_key: :id,
-    foreign_key: :author_id
+           class_name: :Post,
+           primary_key: :id,
+           foreign_key: :author_id
 
   has_many :likes
 
   has_many :liked_posts,
-    through: :likes,
-    source: :posts
+           through: :likes,
+           source: :posts
 
   has_many :followings,
-    class_name: :Follow,
-    primary_key: :id,
-    foreign_key: :follower_id
+           class_name: :Follow,
+           primary_key: :id,
+           foreign_key: :follower_id
 
   has_many :followed_users,
-    through: :followings,
-    source: :followee
+           through: :followings,
+           source: :followee
 
   has_many :followed_posts,
-    through: :followed_users,
-    source: :posts
+           through: :followed_users,
+           source: :posts
 
   has_many :follows,
-    class_name: :Follow,
-    primary_key: :id,
-    foreign_key: :followee_id
+           class_name: :Follow,
+           primary_key: :id,
+           foreign_key: :followee_id
 
   has_many :followers,
-    through: :follows,
-    source: :follower
+           through: :follows,
+           source: :follower
 
 
-  has_attached_file :avatar, default_url: "https://s3-us-west-1.amazonaws.com/mixr-dev/posts/images/000/000/027/original/avatar.png"
-  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
-  validates_attachment_size :avatar, in: 0..20.megabyte
+  has_one_attached :avatar
+  validates :avatar, file_content_type: { allow: ["image/jpeg", "image/png"], if: -> { avatar.attached? }, },
+                     file_size: { less_than: 10.megabyte, if: -> { avatar.attached? }, }
 
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
@@ -87,6 +88,13 @@ class User < ApplicationRecord
   end
 
   private
+
+  def add_default_avatar
+    unless self.avatar
+      self.avatar.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'avatar.png')), filename: 'avatar.png', content_type: 'image/png')
+    end
+  end
+
   def new_session_token
     SecureRandom.urlsafe_base64
   end

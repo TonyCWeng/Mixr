@@ -23,10 +23,13 @@
 class Post < ApplicationRecord
   validates :author_id, presence: true
 
-  has_attached_file :image, default_url: "https://s3-us-west-1.amazonaws.com/mixr-dev/posts/images/000/000/027/original/avatar.png"
-  validates_attachment_content_type :image,
-    content_type: [/\Aimage\/.*\Z/, 'audio/mp3',['audio/mpeg'], 'video/mp4']
-  validates_attachment_size :image, in: 0..10.megabyte
+  has_one_attached :image
+
+  validates :image, file_content_type: {
+                      allow: ['image/jpeg', 'image/png', 'audio/mp3','audio/mpeg', 'video/mp4'],
+                      if: -> { image.attached? },
+                    },
+                    file_size: { less_than: 10.megabyte, if: -> { image.attached? }, }
 
   belongs_to :author,
     class_name: :User,

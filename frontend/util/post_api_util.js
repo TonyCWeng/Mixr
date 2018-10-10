@@ -31,6 +31,13 @@ export const createPost = post => {
   });
 };
 
+export const updatePost = post => {
+  $.ajax({
+    method: 'PATCH',
+    url: `api/posts/${post.id}`
+  });
+};
+
 export const deletePost = id => (
   $.ajax({
     method: 'DELETE',
