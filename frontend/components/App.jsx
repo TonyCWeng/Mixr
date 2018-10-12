@@ -13,7 +13,7 @@ const App = () => (
 
     <ProtectedRoute path='/dashboard' component={DashBoardContainer} />
     <AuthRoute exact path='/' component={SplashPage} />
-  
+
   </div>
 );
 

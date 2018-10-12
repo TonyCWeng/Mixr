@@ -21,11 +21,10 @@
 #
 
 class User < ApplicationRecord
-  include Rails.application.routes.url_helpers
   validates :username, :email, :password_digest, :session_token, presence: true
   validates :username, :email, uniqueness: true
   after_initialize :ensure_session_token
-  before_validation :add_default_avatar
+  after_initialize :add_default_avatar
   before_validation :ensure_session_token_uniqueness
   attr_reader :password
 
@@ -88,14 +87,10 @@ class User < ApplicationRecord
     self.session_token
   end
 
-  def avatar_url
-    rails_blob_path(self.avatar, disposition: "attachment", only_path: true)
-  end
-
   private
 
   def add_default_avatar
-    unless self.avatar
+    unless avatar.attached?
       self.avatar.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'avatar.png')), filename: 'avatar.png', content_type: 'image/png')
     end
   end

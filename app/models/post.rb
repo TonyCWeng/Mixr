@@ -21,7 +21,6 @@
 #
 
 class Post < ApplicationRecord
-  include Rails.application.routes.url_helpers
   validates :author_id, presence: true
 
   has_one_attached :image
@@ -39,8 +38,5 @@ class Post < ApplicationRecord
 
   has_many :likes
 
-  def image_url
-    rails_blob_path(self.image, disposition: "attachment", only_path: true)
-  end
 
 end

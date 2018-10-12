@@ -30,9 +30,9 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
-gem 'file_validators'
-
 gem 'mini_magick'
+
+gem 'file_validators'
 
 gem 'figaro'
 
