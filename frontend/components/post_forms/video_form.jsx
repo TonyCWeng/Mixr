@@ -95,6 +95,9 @@ class VideoForm extends React.Component {
                 accept="video/*"
                 onChange={this.handleMedia}
               />
+              <div className="preview">
+                {preview}
+              </div>
             </div>
 
             <div className="post-field">

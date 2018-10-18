@@ -63,6 +63,7 @@ class TextForm extends React.Component {
   }
 
   render () {
+    const preview = this.state.source ? <img src={this.state.source} /> : null
     return (
       <div className="test">
         <button
@@ -95,6 +96,10 @@ class TextForm extends React.Component {
                 accept="image/*"
                 onChange={this.handleMedia}
               />
+
+              <div className="preview">
+                {preview}
+              </div>
             </div>
 
             <div className="post-field">

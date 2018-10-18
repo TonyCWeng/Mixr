@@ -96,6 +96,9 @@ class AudioForm extends React.Component {
                 accept="audio/*"
                 onChange={this.handleMedia}
               />
+              <div className="preview">
+                {preview}
+              </div>
             </div>
 
             <div className="post-field">
