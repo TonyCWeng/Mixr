@@ -63,6 +63,7 @@ class VideoForm extends React.Component {
   }
 
   render () {
+    const preview = this.state.source ? <img src={this.state.source} /> : null;
     return (
       <div className="test">
         <button
@@ -111,7 +112,10 @@ class VideoForm extends React.Component {
 
             <div className="submission">
               <div className='modal-button'>
-                <button className="btn form-button" onClick={this.handleCloseModal}>
+                <button
+                 className="btn form-button"
+                 onClick={this.handleCloseModal}
+                >
                   Close
                 </button>
 
