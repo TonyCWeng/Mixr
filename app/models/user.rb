@@ -19,6 +19,7 @@
 class User < ApplicationRecord
   validates :username, :email, :password_digest, :session_token, presence: true
   validates :username, :email, uniqueness: true
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
   after_initialize :ensure_session_token
   after_initialize :add_default_avatar
   before_validation :ensure_session_token_uniqueness
